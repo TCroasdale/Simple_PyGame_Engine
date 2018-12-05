@@ -29,7 +29,7 @@ class Game:
         TextureManager.load_texture('steve', 'textures/steve.gif')
         TextureManager.load_texture('player_idle', 'textures/Player.png', (32, 32), (0,32), 13)
         TextureManager.load_texture('player_walk_right', 'textures/Player.png', (32, 32), (0,32), 8)
-        TextureManager.load_texture('player_walk_left', 'textures/Player.png', (32, 32), (0,256), 8)
+        TextureManager.load_texture('player_walk_left', 'textures/Player.png', (32, 32), (0,288), 8)
 
         # Setup controls
         InputManager.assign_control('move_up', pygame.K_UP)
@@ -37,13 +37,13 @@ class Game:
         InputManager.assign_control('move_right', pygame.K_RIGHT)
         InputManager.assign_control('move_down', pygame.K_DOWN)
 
-
-        # Creating the scene
         self.rootSceneNode = SceneNode()
 
+
+    def create_scene(self):
+        # Creating the scene
         self.player = Player()
         playerNode = SceneNode(self.rootSceneNode, self.player)
-
 
     def update(self):
         dT = pygame.time.get_ticks()/1000.0 - self.lastTime
@@ -60,31 +60,34 @@ class Game:
     def quit(self):
         self.running = False
 
+    def start_game(gameclass):
+        pygame.init() # Start pygame.
+        InputManager.setup()
+
+        game = gameclass
+        game.setup() # Set up the window
+        game.create_scene()
+
+        animation_frame_time = 0.0
+        while(game.running):
+            events = []
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    game.quit()
+                else:
+                    events.append(event)
+            InputManager.update(events)
+
+            animation_frame_time += pygame.time.get_ticks()/1000.0 - game.lastTime
+            if animation_frame_time >= 1/game.animation_fps:
+                TextureManager.next_frame()
+                animation_frame_time = 0.0
+
+            game.update() # Update the game code
+            game.render() # Render all the game objects
+            game.updateTime()
+            pygame.time.delay(int((1/60.0) * 1000))
 
 
 if __name__ == "__main__":
-    pygame.init() # Start pygame.
-    InputManager.setup()
-
-    game = Game()
-    game.setup() # Set up the window
-
-    animation_frame_time = 0.0
-    while(game.running):
-        events = []
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                game.quit()
-            else:
-                events.append(event)
-        InputManager.update(events)
-
-        animation_frame_time += pygame.time.get_ticks()/1000.0 - game.lastTime
-        if animation_frame_time >= 1/game.animation_fps:
-            TextureManager.next_frame()
-            animation_frame_time = 0.0
-
-        game.update() # Update the game code
-        game.render() # Render all the game objects
-        game.updateTime()
-        pygame.time.delay(int((1/60.0) * 1000))
+    Game.start_game()
