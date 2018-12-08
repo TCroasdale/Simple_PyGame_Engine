@@ -7,7 +7,7 @@ class Player(Object):
 
     def __init__(self):
         super().__init__()
-        self.textureID = "player_idle_right"
+        self.textureID = "player_walk_right"
         # self.size = (64, 64)
 
         self.speed = 32
@@ -15,9 +15,11 @@ class Player(Object):
     def update(self, delta):
         if InputManager.get_control("move_up"):
             self.move((0, -self.speed * delta))
+            self.textureID = "player_walk_up"
 
         if InputManager.get_control("move_down"):
             self.move((0, self.speed * delta))
+            self.textureID = "player_walk_down"
 
         if InputManager.get_control("move_left"):
             self.move((-self.speed * delta, 0))

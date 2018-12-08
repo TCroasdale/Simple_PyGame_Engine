@@ -31,13 +31,14 @@ class TextureInfo:
         self.frames = f
         self.current_frame = 0
         self.src_rect = sRect
+        self.frame_1 = sRect.x
 
     def get_src_rect(self):
         return self.src_rect
 
     def next_frame(self):
         if self.current_frame+1 == self.frames:
-            self.src_rect = Rect(0, self.src_rect.y, self.src_rect.width, self.src_rect.height)
+            self.src_rect = Rect(self.frame_1, self.src_rect.y, self.src_rect.width, self.src_rect.height)
             self.current_frame = 0
         else:
             self.src_rect = self.src_rect.move(self.src_rect.width, 0)

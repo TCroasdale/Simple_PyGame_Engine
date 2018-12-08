@@ -14,7 +14,7 @@ class Game:
         self.screen_height = 480
         self.running = True
         self.lastTime = pygame.time.get_ticks()/1000.0
-        self.animation_fps = 16
+        self.animation_fps = 4
 
     # Updates time
     def updateTime(self):
@@ -27,10 +27,13 @@ class Game:
 
         # Loading Textures
         TextureManager.load_texture('steve', 'textures/steve.gif')
-        TextureManager.load_texture('player_idle_right', 'textures/Player.png', (32, 32), (0,32), 13)
-        TextureManager.load_texture('player_idle_left', 'textures/Player.png', (32, 32), (0,256), 13)
-        TextureManager.load_texture('player_walk_right', 'textures/Player.png', (32, 32), (0,32), 8)
-        TextureManager.load_texture('player_walk_left', 'textures/Player.png', (32, 32), (0,288), 8)
+        TextureManager.load_texture('player_idle_right', 'textures/character.png', (32, 32), (0,32), 13)
+        TextureManager.load_texture('player_idle_left', 'textures/character.png', (32, 32), (0,256), 13)
+
+        TextureManager.load_texture('player_walk_right', 'textures/character.png', (16, 24), (0,32), 4)
+        TextureManager.load_texture('player_walk_left', 'textures/character.png', (16, 24), (0,96), 4)
+        TextureManager.load_texture('player_walk_up', 'textures/character.png', (16, 24), (0,64), 4)
+        TextureManager.load_texture('player_walk_down', 'textures/character.png', (16, 24), (0,0), 4)
 
         # Setup controls
         InputManager.assign_control('move_up', pygame.K_UP)
