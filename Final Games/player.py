@@ -10,7 +10,7 @@ class Player(Object):
         self.textureID = "player_walk_right"
         # self.size = (64, 64)
 
-        self.speed = 32
+        self.speed = 64
 
     def update(self, delta):
         if InputManager.get_control("move_up"):

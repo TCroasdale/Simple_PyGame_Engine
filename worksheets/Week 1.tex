@@ -1,4 +1,4 @@
-\documentclass[11pt]{report}
+\documentclass[11pt]{article}
 
 \usepackage{listings}
 \usepackage{color}
@@ -27,7 +27,7 @@
 
 \begin{document}
 
-\chapter{Introduction}
+\section*{Introduction}
 Throughout the next 8 weeks we will be creating a game! Hopefully you'll all learn a lot about python.
 
 The first step is to learn about the program we'll be using, there will be a lot of code written that you won't understand. Don't worry! hopefully by the end of it you'll have a better understanding of the ins and outs of python and you might be able to see how it all works.
@@ -57,6 +57,18 @@ if __name__ == "__main__":
 \end{lstlisting}
 On lines 1 to 9 we are importing code from other python files to use within this one. for example, importing pygame allows us to use the pygame library which is the backbone of the entire game.
 
-Lines 12 to 16 define something called a class (which in this case is called AdventureGame) and within this class it creates a function called create_scene. this function is called to add objects to the scene which will then be drawn to the screen.
+Lines 12 to 16 define something called a class (which in this case is called AdventureGame) and within this class it creates a function called create\_scene. this function is called to add objects to the scene which will then be drawn to the screen.
+
+The final two lines of this code start the game when the file is run. 
+
+The line 'if \_\_name\_\_ == "\_\_main\_\_":' checks whether the file has been run by python, don't worry if you don't understand the syntax of this.
+The final line calls the function start\_game() and passes an object of the AdventureGame class into it. again don't worry if you don't understand a lot of this, hopefully you soon will.
+
+\section*{Creating a Player}
+Let's focus now on creating a player object and adding it to the scene. first we must create a player object, then we must add it to something called the 'scene graph'
+ 
+ The scene graph can be though of as a tree that just contains all the game objects in the scene. Don't worry it's very easy to use and most of it has been done for you.
+ 
+
 
 \end{document}

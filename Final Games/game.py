@@ -5,6 +5,7 @@ from Engine.scenenode import *
 from Engine.texturemanager import *
 from Engine.inputmanager import *
 from Engine.object import *
+from Engine.levelmanager import *
 from player import *
 
 
@@ -14,7 +15,7 @@ class Game:
         self.screen_height = 480
         self.running = True
         self.lastTime = pygame.time.get_ticks()/1000.0
-        self.animation_fps = 4
+        self.animation_fps = 6
 
     # Updates time
     def updateTime(self):
@@ -26,7 +27,7 @@ class Game:
         self.screen = pygame.display.set_mode(size)
 
         # Loading Textures
-        TextureManager.load_texture('steve', 'textures/steve.gif')
+        # TextureManager.load_texture('steve', 'textures/steve.gif')
         TextureManager.load_texture('player_idle_right', 'textures/character.png', (32, 32), (0,32), 13)
         TextureManager.load_texture('player_idle_left', 'textures/character.png', (32, 32), (0,256), 13)
 
@@ -54,8 +55,10 @@ class Game:
         self.rootSceneNode.update(dT)
 
     def render(self):
-        fillcolour = Color(25, 25, 40, 1)
+        fillcolour = LevelManager.get_fill_colour()
         self.screen.fill(fillcolour)
+
+        LevelManager.render_level(self.screen)
 
         self.rootSceneNode.render(self.screen)
 
@@ -67,6 +70,7 @@ class Game:
     def start_game(gameclass):
         pygame.init() # Start pygame.
         InputManager.setup()
+        LevelManager.setup()
 
         game = gameclass
         game.setup() # Set up the window

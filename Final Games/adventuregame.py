@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 
 from Engine.scenenode import *
+from Engine.levelmanager import *
 from player import *
 from game import *
 
@@ -12,7 +13,8 @@ class AdventureGame(Game):
     def create_scene(self):
         self.player = Player()
         SceneNode(self.rootSceneNode, self.player)
-        return
+
+        LevelManager.load_level('level1')
 
 if __name__ == "__main__":
     AdventureGame.start_game( AdventureGame())

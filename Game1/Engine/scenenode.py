@@ -14,6 +14,10 @@ class SceneNode:
 
     def addChild(self, node):
         self.children.append(node)
+        node.setParent(self)
+
+    def setParent(self, node):
+        self.parent = node
 
     def attachObject(self, obj):
         if obj != None:

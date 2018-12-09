@@ -1,1 +1,1 @@
-__all__ = ["scenenode", "texturemanager", "inputmanager", "object"]
+__all__ = ["scenenode", "texturemanager", "inputmanager", "levelmanager", "object"]

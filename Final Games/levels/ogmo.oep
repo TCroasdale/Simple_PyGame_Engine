@@ -67,7 +67,7 @@
   <Tilesets>
     <Tileset>
       <Name>overworld</Name>
-      <FilePath>..\Student_Game_Lessons\Final Games\textures\Overworld.png</FilePath>
+      <FilePath>textures\Overworld.png</FilePath>
       <TileSize>
         <Width>16</Width>
         <Height>16</Height>

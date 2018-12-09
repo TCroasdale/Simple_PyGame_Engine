@@ -10,7 +10,9 @@ class AdventureGame(Game):
 
     # This functions will create objects and add them to the scene.
     def create_scene(self):
-        return
+        player = Player()
+        playernode = SceneNode(self.rootSceneNode, player)
+
 
 if __name__ == "__main__":
-    AdventureGame.start_game( AdventureGame())
+    AdventureGame.start_game( AdventureGame() )

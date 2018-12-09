@@ -1,5 +1,3 @@
-from Engine.scenenode import *
-from Engine.texturemanager import *
 from Engine.inputmanager import *
 from Engine.object import *
 
