@@ -54,6 +54,8 @@ class Game:
         dT = pygame.time.get_ticks()/1000.0 - self.lastTime
         self.rootSceneNode.update(dT)
 
+        PhysicsManager.run_checks(self.rootSceneNode)
+
     def render(self):
         fillcolour = LevelManager.get_fill_colour()
         self.screen.fill(fillcolour)
@@ -61,6 +63,7 @@ class Game:
         LevelManager.render_level(self.screen)
 
         self.rootSceneNode.render(self.screen)
+        # PhysicsManager.draw_debug(self.screen, self.rootSceneNode)
 
         pygame.display.flip()
 

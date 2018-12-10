@@ -18,4 +18,4 @@ class Object:
         return
 
     def move(self, amount):
-        self.node.position = (self.node.position[0]+amount[0], self.node.position[1]+amount[1])
+        self.node.translate(amount)

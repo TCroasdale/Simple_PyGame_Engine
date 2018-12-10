@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 
 from Engine.texturemanager import *
+from Engine.physicsmanager import *
 import xml.etree.ElementTree as ET
 import csv
 import math
@@ -55,6 +56,7 @@ class LevelManager:
 
 
     def load_level(levelname):
+        PhysicsManager.remove_all_colliders()
         tree = ET.parse('levels/{0}.oel'.format(levelname))
         root = tree.getroot()
         level_width = int(root.get('width'))
@@ -64,7 +66,12 @@ class LevelManager:
         for layerdef in LevelManager.layers:
             leveldata = root.find(layerdef.name)
             if leveldata.get('exportMode') == 'Rectangles':
-                pass;
+                for rect in leveldata.findall("rect"):
+                    x = int(rect.get('x'))
+                    y = int(rect.get('y'))
+                    w = int(rect.get('w'))
+                    h = int(rect.get('h'))
+                    PhysicsManager.add_collider(Rect(x, y, w, h))
             elif leveldata.get('exportMode') == 'CSV':
                 layerdef.tileset = LevelManager.tilesets[leveldata.get('tileset')]
                 rows = [x for x in leveldata.text.split('\n')]
