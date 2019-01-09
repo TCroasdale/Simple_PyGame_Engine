@@ -13,6 +13,8 @@ class PlatformerPlayer(Object):
         self.direction = "down"
         self.speed = (0, 0)
         self.moveSpeed = 64
+        self.jumpSpeed = 4
+
 
 
     def update(self, deltaTime):
@@ -25,11 +27,14 @@ class PlatformerPlayer(Object):
             self.speed = ((self.moveSpeed * deltaTime, self.speed[1]))
             self.switch_texture("player_walk_right")
             self.direction = "right"
-
         else:
             self.speed = ((0, self.speed[1]))
             self.switch_texture("player_walk_down")
             self.direction = "down"
+
+        if InputManager.get_control_pressed("jump") and not self.in_air:
+            self.speed  = (self.speed[0], -self.jumpSpeed)
+            self.in_air = True
 
         self.speed = (self.speed[0], self.speed[1] + (9.8 * deltaTime))
         self.move(self.speed)
@@ -37,4 +42,9 @@ class PlatformerPlayer(Object):
     def handle_collision(self, coll_data):
         if coll_data.direction == CollisionDirection.Bottom:
             self.speed = (self.speed[0], 0)
+            self.in_air = False
+        elif coll_data.direction == CollisionDirection.Top:
+            self.speed = (self.speed[0], 0)
+
+            
 

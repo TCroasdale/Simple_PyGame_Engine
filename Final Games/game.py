@@ -51,6 +51,7 @@ class Game:
         InputManager.assign_control('move_up', pygame.K_UP)
         InputManager.assign_control('move_left', pygame.K_LEFT)
         InputManager.assign_control('move_right', pygame.K_RIGHT)
+        InputManager.assign_control('jump', pygame.K_UP)
         InputManager.assign_control('move_down', pygame.K_DOWN)
         InputManager.assign_control('attack', pygame.K_SPACE)
 

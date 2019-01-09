@@ -38,33 +38,32 @@ class PhysicsManager:
             pygame.draw.rect(surf, (0, 255, 0, 150), wall)
 
         for node1 in rootNode.get_all_children():
-            pygame.draw.rect(surf, (0, 255, 0, 150), node1.getBounds())#
-
+            pygame.draw.rect(surf, (0, 255, 0, 150), node1.getBounds())
         return surf
 
     def handle_collision(node1, node2):
-        if type(node2) == Rect:
-            newRect = node1.getBounds().clip(node2)
-        else:
-            newRect = node1.getBounds().clip(node2.getBounds())
+        if type(node2) != Rect:
+            node2 = node2.getBounds
+        newRect = node1.getBounds().clip(node2)    
             
         if node1.nodeType == NodeType.Dynamic:
             # Correct position
             other = None if type(node2) == Rect else node2
+
             if newRect.width < newRect.height:
-                if newRect.centerx > node1.getBounds().centerx: # collider to the right
+                if newRect.right > node1.getBounds().centerx: # collider to the right
                     node1.translate((-newRect.width, 0))
                     node1.handle_collision(CollisionInformation(CollisionDirection.Right, newRect.center, other))
-                elif newRect.centerx < node1.getBounds().centerx: # collider to the left
+                elif newRect.left < node1.getBounds().centerx: # collider to the left
                     node1.translate((newRect.width, 0))
                     node1.handle_collision(CollisionInformation(CollisionDirection.Left, newRect.center, other))
             else:
-                if newRect.centery > node1.getBounds().centery: # collider to the bottom
+                if newRect.bottom > node1.getBounds().centery: # collider to the bottom
                     node1.translate((0, -newRect.height))
                     node1.handle_collision(CollisionInformation(CollisionDirection.Bottom, newRect.center, other))
-                elif newRect.centery < node1.getBounds().centery: # collider to the up
+                elif newRect.top < node1.getBounds().centery: # collider to the up
                     node1.translate((0, newRect.height))
-                    node1.handle_collision(CollisionInformation(CollisionDirection.Right, newRect.center, other))
+                    node1.handle_collision(CollisionInformation(CollisionDirection.Top, newRect.center, other))
 
     def run_checks(rootNode):
         for node1 in rootNode.get_all_children():

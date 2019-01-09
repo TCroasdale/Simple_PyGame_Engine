@@ -25,7 +25,10 @@ class Layer:
         self.tileset=tileset
 
     def __str__(self):
-        return "layer: name: {0}, gridsize: {1}, {2}, tiles: {3}, tileset{4}".format(self.name, self.gridsize[0], self.gridsize[1], self.tiles, self.tileset)
+        tiles = []
+        for tile in self.tiles:
+            tiles += [str(tile)]
+        return "layer: name: {0}, gridsize: {1}, {2}, tiles: {3}, tileset{4}".format(self.name, self.gridsize[0], self.gridsize[1], tiles, self.tileset)
 
 # Class to represent (and load) a tile set image
 class Tileset:
@@ -134,4 +137,3 @@ class LevelManager:
             tile_tx = tile_size.find('Width').text
             tile_ty = tile_size.find('Height').text
             LevelManager.tilesets[set_name] = Tileset(set_name, set_file, tile_tx, tile_ty)
-            print(LevelManager.tilesets[set_name])
