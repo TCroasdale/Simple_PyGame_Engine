@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+from Engine.utility import Event
 
 class TextureManager:
     textures = {}
@@ -12,6 +13,13 @@ class TextureManager:
             print("Loaded texture {0} from {1}".format(id, filename))
         else:
             raise TextureExistsError
+
+    def get_texture_info(id):
+        if id in TextureManager.textures:
+            tex_info = TextureManager.textures[id]
+            return tex_info
+        else:
+            raise TextureDoesntExistError
 
     def get_texture(id):
         if id in TextureManager.textures:
@@ -32,16 +40,22 @@ class TextureInfo:
         self.current_frame = 0
         self.src_rect = sRect
         self.frame_1 = sRect.x
+        self.anim_finished_event = Event()
+
+    def get_anim_event(self):
+        return self.anim_finished_event
 
     def get_src_rect(self):
-        return self.src_rect
+        return Rect(self.frame_1+(self.current_frame*self.src_rect.width), self.src_rect.y, self.src_rect.width, self.src_rect.height)
+
+    def reset_anim(self):
+        self.current_frame = 0
 
     def next_frame(self):
         if self.current_frame+1 == self.frames:
-            self.src_rect = Rect(self.frame_1, self.src_rect.y, self.src_rect.width, self.src_rect.height)
             self.current_frame = 0
+            self.anim_finished_event()
         else:
-            self.src_rect = self.src_rect.move(self.src_rect.width, 0)
             self.current_frame += 1
 
     def fetch(self):

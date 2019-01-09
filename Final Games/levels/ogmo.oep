@@ -16,7 +16,7 @@
     <Width>640</Width>
     <Height>480</Height>
   </LevelMaximumSize>
-  <Filename>C:\Users\Tom\Documents\Uni Work\uas\levels\ogmo.oep</Filename>
+  <Filename>C:\Users\Tom\Documents\Uni Work\uas\Student_Game_Lessons\Final Games\levels\ogmo.oep</Filename>
   <AngleMode>Radians</AngleMode>
   <CameraEnabled>false</CameraEnabled>
   <CameraSize>
@@ -67,7 +67,7 @@
   <Tilesets>
     <Tileset>
       <Name>overworld</Name>
-      <FilePath>textures\Overworld.png</FilePath>
+      <FilePath>..\textures\Overworld.png</FilePath>
       <TileSize>
         <Width>16</Width>
         <Height>16</Height>

@@ -2,6 +2,24 @@ import pygame
 from pygame.locals import *
 from Engine.scenenode import *
 
+from enum import Enum
+
+
+class CollisionDirection(Enum):
+    Top = 0
+    Right = 1
+    Bottom = 2
+    Left = 3
+
+class CollisionInformation:
+    def __init__(self, colDir, centerpos, otherNode=None):
+        self.direction = colDir
+        self.position = centerpos
+        self.otherNode = otherNode
+
+    def __str__(self):
+        return "Direction: {0}, centerposition: {1}, against: {2}".format(self.direction, self.position, self.otherNode)
+
 class PhysicsManager:
     def add_collider(rectangle):
         if PhysicsManager.colliders == None:
@@ -13,32 +31,40 @@ class PhysicsManager:
     def remove_all_colliders():
         PhysicsManager.colliders = []
 
-    def draw_debug(screen, rootNode):
+    def draw_debug(size, rootNode):
+        surf = pygame.Surface(size)
+        surf.set_alpha(128)    
         for wall in PhysicsManager.colliders:
-            pygame.draw.rect(screen, (0, 255, 0), wall)
+            pygame.draw.rect(surf, (0, 255, 0, 150), wall)
 
         for node1 in rootNode.get_all_children():
-            pygame.draw.rect(screen, (0, 255, 0), node1.getBounds())
+            pygame.draw.rect(surf, (0, 255, 0, 150), node1.getBounds())#
 
-    def handle_collision(node1, node2bounds):
-        newRect = node1.getBounds().clip(node2bounds)
+        return surf
+
+    def handle_collision(node1, node2):
+        if type(node2) == Rect:
+            newRect = node1.getBounds().clip(node2)
+        else:
+            newRect = node1.getBounds().clip(node2.getBounds())
+            
         if node1.nodeType == NodeType.Dynamic:
-            print("collision! between {0} and{1}".format(node1.getBounds(), node2bounds))
             # Correct position
-            print(newRect)
-            if newRect.centerx > node1.getBounds().centerx: # collider to the right
-                print("moving by{0}".format((newRect.width, 0)))
-                node1.translate((-newRect.width, 0))
-            elif newRect.centerx < node1.getBounds().centerx: # collider to the left
-                print("moving by{0}".format((newRect.width, 0)))
-                node1.translate((newRect.width, 0))
-
-            if newRect.centery > node1.getBounds().centery: # collider to the bottom
-                print("moving by{0}".format((-newRect.height, 0)))
-                node1.translate((0, -newRect.height))
-            elif newRect.centery < node1.getBounds().centery: # collider to the up
-                print("moving by{0}".format((newRect.height, 0)))
-                node1.translate((0, newRect.height))
+            other = None if type(node2) == Rect else node2
+            if newRect.width < newRect.height:
+                if newRect.centerx > node1.getBounds().centerx: # collider to the right
+                    node1.translate((-newRect.width, 0))
+                    node1.handle_collision(CollisionInformation(CollisionDirection.Right, newRect.center, other))
+                elif newRect.centerx < node1.getBounds().centerx: # collider to the left
+                    node1.translate((newRect.width, 0))
+                    node1.handle_collision(CollisionInformation(CollisionDirection.Left, newRect.center, other))
+            else:
+                if newRect.centery > node1.getBounds().centery: # collider to the bottom
+                    node1.translate((0, -newRect.height))
+                    node1.handle_collision(CollisionInformation(CollisionDirection.Bottom, newRect.center, other))
+                elif newRect.centery < node1.getBounds().centery: # collider to the up
+                    node1.translate((0, newRect.height))
+                    node1.handle_collision(CollisionInformation(CollisionDirection.Right, newRect.center, other))
 
     def run_checks(rootNode):
         for node1 in rootNode.get_all_children():
@@ -48,7 +74,7 @@ class PhysicsManager:
                         if node1 is not node2:
                             if node1.getBounds().colliderect(node2.getBounds()):
                                 # There is a collision
-                                PhysicsManager.handle_collision(node1, node2.getBounds())
+                                PhysicsManager.handle_collision(node1, node2)
                 for wall in PhysicsManager.colliders:
                     if node1.getBounds().colliderect(wall):
                         # There is a collision

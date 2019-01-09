@@ -20,13 +20,17 @@ class InputManager:
     def get_control_pressed(id):
         if id in InputManager.controls:
             key = InputManager.controls[id]
-            return InputManager.control_values[key] == 1 and InputManager.old_control_values[key] == 0
+            if key in InputManager.control_values:
+                return InputManager.control_values[key] == 1 and InputManager.old_control_values[key] == 0
+            return False
         raise ControlDoesntExistException
 
     def get_control_pressed(id):
         if id in InputManager.controls:
             key = InputManager.controls[id]
-            return InputManager.control_values[key] == 0 and InputManager.old_control_values[key] == 1
+            if key in InputManager.control_values:
+                return InputManager.control_values[key] == 0 and InputManager.old_control_values[key] == 1
+            return False
         raise ControlDoesntExistException
 
 

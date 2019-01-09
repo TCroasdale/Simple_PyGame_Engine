@@ -42,6 +42,10 @@ class SceneNode:
         return Rect(self.getWorldPosition(), self.attachedObject.size)
 
 
+    def handle_collision(self, coll_data):
+        if self.attachedObject != None:
+            self.attachedObject.handle_collision(coll_data)
+
     def update(self, delta):
         if self.attachedObject != None:
             self.attachedObject.update(delta)

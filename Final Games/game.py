@@ -15,11 +15,17 @@ class Game:
         self.screen_height = 480
         self.running = True
         self.lastTime = pygame.time.get_ticks()/1000.0
-        self.animation_fps = 6
+        self.lastElapsed = 1/60.0
+        self.animation_fps = 8
+        self.animation_frame_time = 0.0
 
     # Updates time
     def updateTime(self):
+        self.lastElapsed = pygame.time.get_ticks()/1000.0 - self.lastTime
         self.lastTime = pygame.time.get_ticks()/1000.0
+        
+
+    
 
 
     def setup(self):
@@ -31,16 +37,24 @@ class Game:
         TextureManager.load_texture('player_idle_right', 'textures/character.png', (32, 32), (0,32), 13)
         TextureManager.load_texture('player_idle_left', 'textures/character.png', (32, 32), (0,256), 13)
 
-        TextureManager.load_texture('player_walk_right', 'textures/character.png', (16, 24), (0,32), 4)
-        TextureManager.load_texture('player_walk_left', 'textures/character.png', (16, 24), (0,96), 4)
-        TextureManager.load_texture('player_walk_up', 'textures/character.png', (16, 24), (0,64), 4)
         TextureManager.load_texture('player_walk_down', 'textures/character.png', (16, 24), (0,0), 4)
+        TextureManager.load_texture('player_walk_right', 'textures/character.png', (16, 24), (0,24), 4)
+        TextureManager.load_texture('player_walk_up', 'textures/character.png', (16, 24), (0,48), 4)
+        TextureManager.load_texture('player_walk_left', 'textures/character.png', (16, 24), (0,72), 4)
+        
+
+        TextureManager.load_texture('player_attack_down', 'textures/character.png', (16, 24), (0,96), 4)
+        TextureManager.load_texture('player_attack_up', 'textures/character.png', (16, 24), (0,120), 4)
+        TextureManager.load_texture('player_attack_right', 'textures/character.png', (16, 24), (0,144), 4)
+        TextureManager.load_texture('player_attack_left', 'textures/character.png', (16, 24), (0,168), 4)
+        
 
         # Setup controls
         InputManager.assign_control('move_up', pygame.K_UP)
         InputManager.assign_control('move_left', pygame.K_LEFT)
         InputManager.assign_control('move_right', pygame.K_RIGHT)
         InputManager.assign_control('move_down', pygame.K_DOWN)
+        InputManager.assign_control('attack', pygame.K_SPACE)
 
         self.rootSceneNode = SceneNode()
 
@@ -52,6 +66,14 @@ class Game:
 
     def update(self):
         dT = pygame.time.get_ticks()/1000.0 - self.lastTime
+
+        # Update the animations
+        self.animation_frame_time += dT
+        if self.animation_frame_time >= 1.0/self.animation_fps:
+            TextureManager.next_frame()
+            self.animation_frame_time = 0.0
+
+            
         self.rootSceneNode.update(dT)
 
         PhysicsManager.run_checks(self.rootSceneNode)
@@ -63,7 +85,7 @@ class Game:
         LevelManager.render_level(self.screen)
 
         self.rootSceneNode.render(self.screen)
-        # PhysicsManager.draw_debug(self.screen, self.rootSceneNode)
+        # self.screen.blit(PhysicsManager.draw_debug((self.screen_width, self.screen_height), self.rootSceneNode), (0,0))
 
         pygame.display.flip()
 
@@ -79,7 +101,7 @@ class Game:
         game.setup() # Set up the window
         game.create_scene()
 
-        animation_frame_time = 0.0
+
         while(game.running):
             events = []
             for event in pygame.event.get():
@@ -89,16 +111,12 @@ class Game:
                     events.append(event)
             InputManager.update(events)
 
-            animation_frame_time += pygame.time.get_ticks()/1000.0 - game.lastTime
-            if animation_frame_time >= 1/game.animation_fps:
-                TextureManager.next_frame()
-                animation_frame_time = 0.0
-
             game.update() # Update the game code
             game.render() # Render all the game objects
+
             game.updateTime()
-            pygame.time.delay(int((1/60.0) * 1000))
+            pygame.time.delay(int(((1/60.0) - game.lastElapsed) * 1000))
 
 
 if __name__ == "__main__":
-    Game.start_game( Game())
+    Game.start_game( Game() )

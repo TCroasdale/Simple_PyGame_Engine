@@ -10,8 +10,8 @@ import math
 # Class to represent a single tile
 class Tile:
     def __init__(self, id, position):
-        self.tileID = id;
-        self.position = position;
+        self.tileID = id
+        self.position = position
 
 # Class to represent a layer of tiles
 class Layer:
@@ -27,6 +27,8 @@ class Tileset:
         self.name = id
         self.path = locale
         self.gridsize = (int(tX), int(tY))
+        locale = locale.split('../')[1]
+        print(locale)
         TextureManager.load_texture(id, locale)
 
 
