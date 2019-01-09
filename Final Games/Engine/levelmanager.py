@@ -13,6 +13,9 @@ class Tile:
         self.tileID = id
         self.position = position
 
+    def __str__(self):
+        return "tile: id: {0}, position: {1}".format(self.tileID, self.position)
+
 # Class to represent a layer of tiles
 class Layer:
     def __init__(self, name, tX, tY, tiles=[], tileset=None):
@@ -21,6 +24,9 @@ class Layer:
         self.tiles=tiles
         self.tileset=tileset
 
+    def __str__(self):
+        return "layer: name: {0}, gridsize: {1}, {2}, tiles: {3}, tileset{4}".format(self.name, self.gridsize[0], self.gridsize[1], self.tiles, self.tileset)
+
 # Class to represent (and load) a tile set image
 class Tileset:
     def __init__(self, id, locale, tX, tY):
@@ -28,8 +34,10 @@ class Tileset:
         self.path = locale
         self.gridsize = (int(tX), int(tY))
         locale = locale.split('../')[1]
-        print(locale)
         TextureManager.load_texture(id, locale)
+
+    def __str__(self):
+        return "tileset: id: {0}, locale: {1}, tx: {2}, ty: {3}".format(self.name, self.path, self.gridsize[0], self.gridsize[1])   
 
 
 
@@ -116,12 +124,14 @@ class LevelManager:
             layer_ty = layer_grid.find('Height').text
             LevelManager.layers += [Layer(layer_name, layer_tx, layer_ty)]
 
+
         #Load all texture sheets
         LevelManager.tilesets = {}
         for tileset in root.find('Tilesets'):
             set_name = tileset.find('Name').text
             set_file = tileset.find('FilePath').text.replace('\\', '/')
-            tile_size = layer_def.find('TileSize')
-            tile_tx = layer_grid.find('Width').text
-            tile_ty = layer_grid.find('Height').text
+            tile_size = tileset.find('TileSize')
+            tile_tx = tile_size.find('Width').text
+            tile_ty = tile_size.find('Height').text
             LevelManager.tilesets[set_name] = Tileset(set_name, set_file, tile_tx, tile_ty)
+            print(LevelManager.tilesets[set_name])

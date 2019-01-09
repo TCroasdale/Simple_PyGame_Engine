@@ -25,8 +25,6 @@ class Game:
         self.lastTime = pygame.time.get_ticks()/1000.0
         
 
-    
-
 
     def setup(self):
         size = (self.screen_width, self.screen_height)
@@ -65,7 +63,7 @@ class Game:
         playerNode = SceneNode(self.rootSceneNode, self.player)
 
     def update(self):
-        dT = pygame.time.get_ticks()/1000.0 - self.lastTime
+        dT = pygame.time.get_ticks()/1000.0 - self.lastTime 
 
         # Update the animations
         self.animation_frame_time += dT
@@ -115,7 +113,8 @@ class Game:
             game.render() # Render all the game objects
 
             game.updateTime()
-            pygame.time.delay(int(((1/60.0) - game.lastElapsed) * 1000))
+            # pygame.time.delay(int(((1/60.0) - game.lastElapsed) * 1000))
+            pygame.time.delay(16) # 60 FPS
 
 
 if __name__ == "__main__":

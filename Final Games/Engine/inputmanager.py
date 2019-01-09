@@ -25,7 +25,7 @@ class InputManager:
             return False
         raise ControlDoesntExistException
 
-    def get_control_pressed(id):
+    def get_control_released(id):
         if id in InputManager.controls:
             key = InputManager.controls[id]
             if key in InputManager.control_values:
