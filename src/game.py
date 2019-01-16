@@ -40,11 +40,17 @@ class Game:
         TextureManager.load_texture('player_walk_up', 'textures/character.png', (16, 24), (0,48), 4)
         TextureManager.load_texture('player_walk_left', 'textures/character.png', (16, 24), (0,72), 4)
         
-
         TextureManager.load_texture('player_attack_down', 'textures/character.png', (16, 24), (0,96), 4)
         TextureManager.load_texture('player_attack_up', 'textures/character.png', (16, 24), (0,120), 4)
         TextureManager.load_texture('player_attack_right', 'textures/character.png', (16, 24), (0,144), 4)
         TextureManager.load_texture('player_attack_left', 'textures/character.png', (16, 24), (0,168), 4)
+
+        TextureManager.load_texture('robot_blue_right', 'textures/robots.png', (32, 32), (0,0), 1)
+        TextureManager.load_texture('robot_blue_left', 'textures/robots.png', (32, 32), (0,32), 1)
+        TextureManager.load_texture('robot_green_right', 'textures/robots.png', (32, 32), (32,0), 1)
+        TextureManager.load_texture('robot_green_left', 'textures/robots.png', (32, 32), (32,32), 1)
+        TextureManager.load_texture('robot_red_right', 'textures/robots.png', (32, 32), (61,0), 1)
+        TextureManager.load_texture('robot_red_left', 'textures/robots.png', (32, 32), (61,32), 1)
         
 
         # Setup controls
@@ -85,6 +91,8 @@ class Game:
 
         self.rootSceneNode.render(self.screen)
         # self.screen.blit(PhysicsManager.draw_debug((self.screen_width, self.screen_height), self.rootSceneNode), (0,0))
+
+        LevelManager.render_level(self.screen, True)
 
         pygame.display.flip()
 

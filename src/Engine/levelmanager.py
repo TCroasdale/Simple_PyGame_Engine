@@ -51,9 +51,10 @@ class LevelManager:
         return LevelManager.colour
 
     # Draws every tile to the screen
-    def render_level(screen):
+    def render_level(screen, foreground=False):
         if LevelManager.isLevelLoaded: #If the level isn't loaded, don't render
-            for layerdef in LevelManager.layers: # Draw Every layer
+            layers = LevelManager.fg_layers if foreground else LevelManager.bg_layers
+            for layerdef in layers: # Draw Every layer
                 if layerdef.tileset != None: # Don't try to draw it if there is no tileset attached
                     texture = TextureManager.get_texture(layerdef.tileset.name) # Fetch the tile set texture
                     # Get the number of tiles perrow in the tileset
@@ -76,7 +77,7 @@ class LevelManager:
         level_height = int(root.get('height'))
 
         LevelManager.level_data = {}
-        for layerdef in LevelManager.layers:
+        for layerdef in LevelManager.bg_layers + LevelManager.fg_layers:
             leveldata = root.find(layerdef.name)
             if leveldata.get('exportMode') == 'Rectangles':
                 for rect in leveldata.findall("rect"):
@@ -118,14 +119,18 @@ class LevelManager:
         a = int(bgColour.get('A'))
         LevelManager.colour = Color(r, g, b, a)
 
-        LevelManager.layers = []
+        LevelManager.fg_layers = []
+        LevelManager.bg_layers = []
         #Load all layer definitions
         for layer_def in root.find('LayerDefinitions'):
             layer_name = layer_def.find('Name').text
             layer_grid = layer_def.find('Grid')
             layer_tx = layer_grid.find('Width').text
             layer_ty = layer_grid.find('Height').text
-            LevelManager.layers += [Layer(layer_name, layer_tx, layer_ty)]
+            if layer_name[:2] == "fg":
+                LevelManager.fg_layers += [Layer(layer_name, layer_tx, layer_ty)]
+            else:
+                LevelManager.bg_layers += [Layer(layer_name, layer_tx, layer_ty)]
 
 
         #Load all texture sheets
