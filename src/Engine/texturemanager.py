@@ -2,6 +2,9 @@ import pygame
 from pygame.locals import *
 from Engine.utility import Event
 
+"""
+TextureManager 
+"""
 class TextureManager:
     textures = {}
 

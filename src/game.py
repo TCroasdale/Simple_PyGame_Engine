@@ -8,7 +8,9 @@ from Engine.object import *
 from Engine.levelmanager import *
 from player import *
 
+"""
 
+"""
 class Game:
     def __init__(self):
         self.screen_width = 640
@@ -78,7 +80,6 @@ class Game:
             TextureManager.next_frame()
             self.animation_frame_time = 0.0
 
-            
         self.rootSceneNode.update(dT)
 
         PhysicsManager.run_checks(self.rootSceneNode)
