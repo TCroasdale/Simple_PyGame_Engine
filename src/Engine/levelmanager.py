@@ -104,7 +104,11 @@ class LevelManager:
     # Draws every tile to the screen
     def render_level(screen, foreground=False):
         """
+        Draws all tiles loaded in memer to the screen provided.
 
+        Keyword arguments:
+        screen -- The pygame screen to blit the images to.
+        foreground -- Whether to draw foregroudn layers or not. (default = False)
         """
         if LevelManager.isLevelLoaded: #If the level isn't loaded, don't render
             layers = LevelManager.fg_layers if foreground else LevelManager.bg_layers
@@ -124,6 +128,12 @@ class LevelManager:
 
 
     def load_level(levelname):
+        """
+        Loads an OGMO level from the levels direction into memory, 
+
+        Keyword arguments:
+        levelname -- The file name of the OGMO level, exluding the directory and .oel extension.
+        """
         PhysicsManager.remove_all_colliders()
         tree = ET.parse('levels/{0}.oel'.format(levelname))
         root = tree.getroot()
@@ -161,6 +171,9 @@ class LevelManager:
 
 
     def setup():
+        """
+        Setups the LevelManager and reads in the level project data, such as all layers and background colour.
+        """
         LevelManager.isLevelLoaded = False
         tree = ET.parse('levels/ogmo.oep')
         root = tree.getroot()

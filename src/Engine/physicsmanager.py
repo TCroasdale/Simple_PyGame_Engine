@@ -16,17 +16,39 @@ class CollisionDirection(Enum):
     Left = 3
 
 class CollisionInformation:
-    """"""
+    """
+    Class containing relevant information from a collision.
+    """
     def __init__(self, colDir, centerpos, otherNode=None):
+        """
+        Constructor for this class.
+
+        Keyword arguments:
+        colDir -- The CollisionDirection of the described collision.
+        centerpos -- The center position of the Collision.4
+        otherNode -- The other node affected by this collision, may not exist. (default = None)
+        """
         self.direction = colDir
         self.position = centerpos
         self.otherNode = otherNode
 
     def __str__(self):
+        """
+        returns the string representation of this class.
+        """
         return "Direction: {0}, centerposition: {1}, against: {2}".format(self.direction, self.position, self.otherNode)
 
 class PhysicsManager:
+    """
+    Manager class for physics calculations and representations.
+    """
     def add_collider(rectangle):
+        """
+        Adds a static rectangle collider to the scene.
+
+        Keyword arguments:
+        rectangle -- The Rect to add to the scene.
+        """
         if PhysicsManager.colliders == None:
             PhysicsManager.colliders = []
 
@@ -34,9 +56,22 @@ class PhysicsManager:
         PhysicsManager.colliders += [rectangle]
 
     def remove_all_colliders():
+        """
+        Clears all static rectangle colliders from the scene.
+        """
         PhysicsManager.colliders = []
 
     def draw_debug(size, rootNode):
+        """
+        Draws all the colliders to the screen in transparent green.
+
+        Keyword arguments:
+        size -- The size of the surface to create and draw to.
+        rootNode -- The root scene node of the scene.
+        
+        Returns:
+        A pygame surface with all colliders drawn to it.
+        """
         surf = pygame.Surface(size)
         surf.set_alpha(128)    
         for wall in PhysicsManager.colliders:
@@ -47,6 +82,13 @@ class PhysicsManager:
         return surf
 
     def handle_collision(node1, node2):
+        """
+        Called upon finding a collision. Fixes the collisions, and tells the scenenodes to handle_collision.
+
+        Keyword arguments:
+        node1 -- The primary node of the collision, will be the one reacting to the collision
+        node2 -- The secondary node of the collision, or a Rect object of a static coliider.
+        """
         if type(node2) != Rect:
             node2 = node2.getBounds
         newRect = node1.getBounds().clip(node2)    
@@ -71,6 +113,12 @@ class PhysicsManager:
                     node1.handle_collision(CollisionInformation(CollisionDirection.Top, newRect.center, other))
 
     def run_checks(rootNode):
+        """
+        Called once per frame, checks the scene graph for collisions between scene nodes and startic colliders.
+
+        Keyword arguments:
+        rootNode -- The root scene node of the scene graph.
+        """
         for node1 in rootNode.get_all_children():
             if node1.getBounds().width > 0 or node1.getBounds().height > 0:
                 for node2 in rootNode.get_all_children():

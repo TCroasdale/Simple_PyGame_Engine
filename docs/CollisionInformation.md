@@ -1,16 +1,26 @@
 # CollisionInformation 
  ```
-  
+ Class containing relevant information from a collision. 
 ```
 ## __init__(self, colDir, centerpos, otherNode=None) 
 
- ```  ``` 
+  
 
- Initialize self.  See help(type(self)) for accurate signature. 
+ > Constructor for this class.
+
+ > 
+
+ > Keyword arguments:
+
+ > colDir -- The CollisionDirection of the described collision.
+
+ > centerpos -- The center position of the Collision.4
+
+ > otherNode -- The other node affected by this collision, may not exist. (default = None) 
 
 ## __str__(self) 
 
- ```  ``` 
+  
 
- Return str(self). 
+ > returns the string representation of this class. 
 

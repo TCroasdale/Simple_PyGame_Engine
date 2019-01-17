@@ -4,25 +4,25 @@
 ```
 ## __init__(self, id, locale, tX, tY) 
 
- ```  ``` 
+  
 
- Constructor for a Tileset Object.
+ > Constructor for a Tileset Object.
 
+ > 
 
+ > Keyword arguments:
 
-Keyword arguments:
+ > id -- The id in TextureManager of the tileset image.
 
-id -- The id in TextureManager of the tileset image.
+ > path -- The file path of the tileset image.
 
-path -- The file path of the tileset image.
+ > tX -- The width of tiles in the image.
 
-tX -- The width of tiles in the image.
-
-tY -- The height of tiles in the image. 
+ > tY -- The height of tiles in the image. 
 
 ## __str__(self) 
 
- ```  ``` 
+  
 
- Returns a string representation of this object 
+ > Returns a string representation of this object 
 
