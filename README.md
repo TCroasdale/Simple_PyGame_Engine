@@ -10,3 +10,8 @@ This is a simple Game Engine/Framework for creating games in PyGame. Originally 
 - Sound
 - TMX Levels
 - Real Physics
+
+## To Build Documentation
+Documentation shoudl generally be up to date, but if you think it is not, run
+
+``` python builddocs.py ```

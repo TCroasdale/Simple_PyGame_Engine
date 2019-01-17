@@ -1,15 +1,14 @@
 import pygame
 from pygame.locals import *
 
-from Engine.scenenode import *
-from Engine.texturemanager import *
-from Engine.inputmanager import *
-from Engine.object import *
-from Engine.levelmanager import *
-from player import *
+from src.engine.scenenode import *
+from src.engine.texturemanager import *
+from src.engine.inputmanager import *
+from src.engine.object import *
+from src.engine.levelmanager import *
 
 """
-
+This class represents and runs the full Game
 """
 class Game:
     def __init__(self):
@@ -21,13 +20,17 @@ class Game:
         self.animation_fps = 8
         self.animation_frame_time = 0.0
 
-    # Updates time
+    """
+    Called once per frame, to set the values for lastElapsed and lastTime variables
+    """
     def updateTime(self):
         self.lastElapsed = pygame.time.get_ticks()/1000.0 - self.lastTime
         self.lastTime = pygame.time.get_ticks()/1000.0
         
 
-
+    """
+    Called at startup to create the screen, load textures, assign controls and create a rootSceneNode
+    """
     def setup(self):
         size = (self.screen_width, self.screen_height)
         self.screen = pygame.display.set_mode(size)
@@ -65,12 +68,15 @@ class Game:
 
         self.rootSceneNode = SceneNode()
 
-
+    """
+    Create The initial scene, should be overriden and create whatever objects your game needs.
+    """
     def create_scene(self):
-        # Creating the scene
-        self.player = Player()
-        playerNode = SceneNode(self.rootSceneNode, self.player)
+        pass
 
+    """
+    Called once per frame, updates all animations scenenodes (and attached objects) and then runs physics checks
+    """
     def update(self):
         dT = pygame.time.get_ticks()/1000.0 - self.lastTime 
 
@@ -84,6 +90,9 @@ class Game:
 
         PhysicsManager.run_checks(self.rootSceneNode)
 
+    """
+    Called once per frames, draws all objects to the screen, and all level tiles
+    """
     def render(self):
         fillcolour = LevelManager.get_fill_colour()
         self.screen.fill(fillcolour)
@@ -97,9 +106,15 @@ class Game:
 
         pygame.display.flip()
 
+    """
+    Ends the game after this frame is completed
+    """
     def quit(self):
         self.running = False
 
+    """
+    Initialises the game, setups all all Manager classes, creates the scene and then runs the game loop
+    """
     def start_game(gameclass):
         pygame.init() # Start pygame.
         InputManager.setup()

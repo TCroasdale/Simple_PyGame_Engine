@@ -2,8 +2,14 @@ import pygame
 from pygame.locals import *
 
 class InputManager:
+    """
+    InputManager is the class responsible for registering, and keeping current inputs up to date.
+    """
 
     def setup():
+        """
+        
+        """
         InputManager.controls = {}
         InputManager.old_control_values = {}
         InputManager.control_values = {}

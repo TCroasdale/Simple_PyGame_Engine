@@ -1,0 +1,4 @@
+# NodeType 
+ ```
+ An enumeration. 
+```

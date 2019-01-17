@@ -1,11 +1,12 @@
 import pygame
 from pygame.locals import *
-from Engine.utility import Event
+from src.engine.utility import Event
 
-"""
-TextureManager 
-"""
+
 class TextureManager:
+    """
+    TextureManager 
+    """
     textures = {}
 
     def load_texture(id, filename, size=None, pos=(0,0), numFrames=1):

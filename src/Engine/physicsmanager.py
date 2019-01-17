@@ -1,17 +1,22 @@
 import pygame
 from pygame.locals import *
-from Engine.scenenode import *
+from src.engine.scenenode import *
 
 from enum import Enum
 
 
 class CollisionDirection(Enum):
+    """
+    Collision Direction specifies the direction from which a collider hits the other collider
+    i.e Top means the other collider is above this collider
+    """
     Top = 0
     Right = 1
     Bottom = 2
     Left = 3
 
 class CollisionInformation:
+    """
     def __init__(self, colDir, centerpos, otherNode=None):
         self.direction = colDir
         self.position = centerpos

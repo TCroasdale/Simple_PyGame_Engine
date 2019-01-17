@@ -1,8 +1,8 @@
 import pygame
 from pygame.locals import *
 
-from Engine.texturemanager import *
-from Engine.physicsmanager import *
+from src.engine.texturemanager import *
+from src.engine.physicsmanager import *
 import xml.etree.ElementTree as ET
 import csv
 import math
@@ -45,9 +45,15 @@ class Tileset:
 
 
 class LevelManager:
+    """
+    THIS IS A DOCSTRING
+    """
 
-    # Returns the BackgroundColor defined in the oep file
+    """
+    Returns the fill colour specified in the level file.
+    """
     def get_fill_colour():
+        
         return LevelManager.colour
 
     # Draws every tile to the screen

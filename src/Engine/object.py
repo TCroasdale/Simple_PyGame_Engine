@@ -1,4 +1,4 @@
-from Engine.texturemanager import *
+from src.engine.texturemanager import *
 
 class Object:
     def __init__(self, scenenode=None):
