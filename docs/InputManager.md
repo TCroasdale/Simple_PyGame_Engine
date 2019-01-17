@@ -2,6 +2,12 @@
  ```
  InputManager is the class responsible for registering, and keeping current inputs up to date. 
 ```
+## Methods: * [assign_control(id-key)](/#assign_controlid-key) 
+* [get_control(id)](/#get_controlid) 
+* [get_control_pressed(id)](/#get_control_pressedid) 
+* [get_control_released(id)](/#get_control_releasedid) 
+* [setup()](/#setup) 
+* [update(events)](/#updateevents) 
 ## assign_control(id, key) 
 
   

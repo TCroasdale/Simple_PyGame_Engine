@@ -2,4 +2,4 @@
  ```
  An enumeration. 
 ```
---- 
+## Methods: --- 

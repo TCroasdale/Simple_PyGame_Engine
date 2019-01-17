@@ -2,6 +2,10 @@
  ```
  This class manages loading and reading level files. 
 ```
+## Methods: * [get_fill_colour()](/#get_fill_colour) 
+* [load_level(levelname)](/#load_levellevelname) 
+* [render_level(screen-foreground=False)](/#render_levelscreen-foreground=False) 
+* [setup()](/#setup) 
 ## get_fill_colour() 
 
   

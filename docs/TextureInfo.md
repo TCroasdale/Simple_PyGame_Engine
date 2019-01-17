@@ -2,6 +2,7 @@
  ```
  None 
 ```
+## Methods: * [__init__(self-tex-f=1-sRect=None)](/#__init__self-tex-f=1-sRect=None) 
 ## __init__(self, tex, f=1, sRect=None) 
 
   
