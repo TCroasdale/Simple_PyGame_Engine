@@ -7,24 +7,54 @@ import xml.etree.ElementTree as ET
 import csv
 import math
 
-# Class to represent a single tile
+
 class Tile:
+    """
+    This class represents a single tile in the world.
+    """
     def __init__(self, id, position):
+        """
+        Constructor for a Tile Object.
+
+        Keyword arguments:
+        id -- The ID of the Tile in the Tilesheet.
+        Position -- The Position of the Tile in the form (x, y).
+        """
         self.tileID = id
         self.position = position
 
     def __str__(self):
+        """
+        Returns a string representation of this object
+        """
         return "tile: id: {0}, position: {1}".format(self.tileID, self.position)
 
 # Class to represent a layer of tiles
 class Layer:
+    """
+    Represents a single layer of the world.
+
+    
+    """
     def __init__(self, name, tX, tY, tiles=[], tileset=None):
+        """
+        Constructor for a Layer Object.
+
+        Keyword arguments:
+        name -- The name of the layer.
+        
+        tiles -- A list of tiles present in this layer (default = [])
+        tileset -- The tiles set to use for this layer (defaul = None)
+        """
         self.name = name
         self.gridsize = (int(tX), int(tY))
         self.tiles=tiles
         self.tileset=tileset
 
     def __str__(self):
+        """
+        Returns a string representation of this object
+        """
         tiles = []
         for tile in self.tiles:
             tiles += [str(tile)]
@@ -32,7 +62,19 @@ class Layer:
 
 # Class to represent (and load) a tile set image
 class Tileset:
+    """
+    Class to represent a tileset image in terms of file location and gridsize.
+    """
     def __init__(self, id, locale, tX, tY):
+        """
+        Constructor for a Tileset Object.
+
+        Keyword arguments:
+        id -- The id in TextureManager of the tileset image.
+        path -- The file path of the tileset image.
+        tX -- The width of tiles in the image.
+        tY -- The height of tiles in the image.
+        """
         self.name = id
         self.path = locale
         self.gridsize = (int(tX), int(tY))
@@ -40,24 +82,30 @@ class Tileset:
         TextureManager.load_texture(id, locale)
 
     def __str__(self):
+        """
+        Returns a string representation of this object
+        """
         return "tileset: id: {0}, locale: {1}, tx: {2}, ty: {3}".format(self.name, self.path, self.gridsize[0], self.gridsize[1])   
 
 
 
 class LevelManager:
     """
-    THIS IS A DOCSTRING
+    This class manages loading and reading level files.
     """
 
-    """
-    Returns the fill colour specified in the level file.
-    """
+   
     def get_fill_colour():
-        
+        """
+        Returns the fill colour specified in the level file.
+        """
         return LevelManager.colour
 
     # Draws every tile to the screen
     def render_level(screen, foreground=False):
+        """
+
+        """
         if LevelManager.isLevelLoaded: #If the level isn't loaded, don't render
             layers = LevelManager.fg_layers if foreground else LevelManager.bg_layers
             for layerdef in layers: # Draw Every layer

@@ -14,8 +14,8 @@ def find_classes():
                 for member in functions:
 
                     if  member.__doc__ and "__" not in member:
-                        print("adding member: {0}".format(member))
-                        func_dict[member[0]] = inspect.getdoc(member[1])
+                        # print("adding member: {0}".format(member))
+                        func_dict[member[0]] = (inspect.getdoc(member[1]), inspect.signature(member[1]))
                 class_functions[name] = func_dict
                 class_doc[name] = inspect.getdoc(obj) 
 
@@ -23,12 +23,16 @@ def create_md_file(classname, classdoc, functions):
     if len(functions) < 1 and classdoc is "": return
     
     title = "# {0} \n ```\n {1} \n```\n"
-    function_def = "### {0} \n  ```\n {1} \n```\n"
+    function_def = "## {0}{1} \n\n ```  ``` \n\n {2} \n\n"
+
+    classdoc.replace("\n", "\n\n") if classdoc is not None else 0
 
     full_file = title.format(classname, classdoc)
-
+    
     for fn in functions:
-        full_file += function_def.format(fn, functions[fn])
+        if functions[fn][0] is not None:
+            # functions[fn][0] is the docstring, functions[fn][1] is the signature, 
+            full_file += function_def.format(fn, functions[fn][1], functions[fn][0].replace("\n", "\n\n"))
 
 
     file = open("docs/{0}.md".format(classname), "w") 

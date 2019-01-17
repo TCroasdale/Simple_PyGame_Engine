@@ -2,35 +2,9 @@
  ```
  None 
 ```
-### __init__ 
-  ```
+## __init__(self) 
+
+ ```  ``` 
+
  Initialize self.  See help(type(self)) for accurate signature. 
-```
-### create_scene 
-  ```
- None 
-```
-### quit 
-  ```
- None 
-```
-### render 
-  ```
- None 
-```
-### setup 
-  ```
- None 
-```
-### start_game 
-  ```
- None 
-```
-### update 
-  ```
- None 
-```
-### updateTime 
-  ```
- None 
-```
+

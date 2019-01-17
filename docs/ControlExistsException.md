@@ -1,4 +1,4 @@
 # ControlExistsException 
  ```
- Common base class for all non-exit exceptions. 
+ Raised when a trying to register a keycode to an ID that already exists. 
 ```

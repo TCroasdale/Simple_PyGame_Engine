@@ -16,7 +16,7 @@ class CollisionDirection(Enum):
     Left = 3
 
 class CollisionInformation:
-    """
+    """"""
     def __init__(self, colDir, centerpos, otherNode=None):
         self.direction = colDir
         self.position = centerpos

@@ -2,35 +2,9 @@
  ```
  None 
 ```
-### __init__ 
-  ```
+## __init__(self, scenenode=None) 
+
+ ```  ``` 
+
  Initialize self.  See help(type(self)) for accurate signature. 
-```
-### handle_collision 
-  ```
- None 
-```
-### move 
-  ```
- None 
-```
-### setSceneNode 
-  ```
- None 
-```
-### setSize 
-  ```
- None 
-```
-### setTextureID 
-  ```
- None 
-```
-### switch_texture 
-  ```
- None 
-```
-### update 
-  ```
- None 
-```
+

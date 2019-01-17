@@ -8,7 +8,7 @@ class InputManager:
 
     def setup():
         """
-        
+        setup should be called when the game starts up, it creates empty dictionaries for the the controls.
         """
         InputManager.controls = {}
         InputManager.old_control_values = {}
@@ -16,6 +16,12 @@ class InputManager:
 
 
     def get_control(id):
+        """
+        Returns whether a control by the name of id is currently down.
+
+        Keyword arguments:
+        id -- The ID assigned to the control.
+        """
         if id in InputManager.controls:
             key = InputManager.controls[id]
             if key in InputManager.control_values:
@@ -24,6 +30,12 @@ class InputManager:
         raise ControlDoesntExistException
 
     def get_control_pressed(id):
+        """
+        Returns whether a control by the name of id got pressed down this frame.
+
+        Keyword arguments:
+        id -- The ID assigned to the control.
+        """
         if id in InputManager.controls:
             key = InputManager.controls[id]
             if key in InputManager.control_values and key in InputManager.old_control_values:
@@ -32,6 +44,12 @@ class InputManager:
         raise ControlDoesntExistException
 
     def get_control_released(id):
+        """
+        Returns whether a control by the name of id got released down this frame.
+
+        Keyword arguments:
+        id -- The ID assigned to the control.
+        """
         if id in InputManager.controls:
             key = InputManager.controls[id]
             if key in InputManager.control_values and key in InputManager.old_control_values:
@@ -41,6 +59,12 @@ class InputManager:
 
 
     def update(events):
+        """
+        Updates the current values for controls that ahve been registered.
+
+        Keyword arguments:
+        events -- The events list received from pygame.event.get()
+        """
         InputManager.old_control_values = InputManager.control_values
         InputManager.control_values = {}
         for e in events:
@@ -54,6 +78,13 @@ class InputManager:
                 InputManager.control_values[key] = InputManager.old_control_values[key]
 
     def assign_control(id, key):
+        """
+        Assigns an ID to a pygame keycode, and registers it.
+
+        Keyword arguments:
+        id -- The ID to assign the keycode to.
+        key -- The keycode to assign
+        """
         if id not in InputManager.controls:
             print("Assigning key {0} to id: {1}".format(pygame.key.name(key), id))
             InputManager.controls[id] = key
@@ -62,7 +93,13 @@ class InputManager:
 
 
 class ControlExistsException(Exception):
+    """
+    Raised when a trying to register a keycode to an ID that already exists.
+    """
     pass
 
 class ControlDoesntExistException(Exception):
+    """
+    Raised when a trying to find a control with an ID that doesn't exist.
+    """
     pass

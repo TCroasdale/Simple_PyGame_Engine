@@ -3,19 +3,21 @@
  list() -> new empty list
 list(iterable) -> new list initialized from iterable's items 
 ```
-### __call__ 
-  ```
+## __call__(self, *args, **kwargs) 
+
+ ```  ``` 
+
  Call self as a function. 
-```
-### __iadd__ 
-  ```
+
+## __iadd__(self, handler) 
+
+ ```  ``` 
+
  Implement self+=value. 
-```
-### __isub__ 
-  ```
- None 
-```
-### __repr__ 
-  ```
+
+## __repr__(self) 
+
+ ```  ``` 
+
  Return repr(self). 
-```
+

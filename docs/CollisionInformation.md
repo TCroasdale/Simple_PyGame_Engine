@@ -1,12 +1,16 @@
 # CollisionInformation 
  ```
- None 
+  
 ```
-### __init__ 
-  ```
+## __init__(self, colDir, centerpos, otherNode=None) 
+
+ ```  ``` 
+
  Initialize self.  See help(type(self)) for accurate signature. 
-```
-### __str__ 
-  ```
+
+## __str__(self) 
+
+ ```  ``` 
+
  Return str(self). 
-```
+

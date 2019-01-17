@@ -1,20 +1,16 @@
 # LevelManager 
  ```
- THIS IS A DOCSTRING 
+ This class manages loading and reading level files. 
 ```
-### get_fill_colour 
-  ```
- None 
-```
-### load_level 
-  ```
- None 
-```
-### render_level 
-  ```
- None 
-```
-### setup 
-  ```
- None 
-```
+## get_fill_colour() 
+
+ ```  ``` 
+
+ Returns the fill colour specified in the level file. 
+
+## render_level(screen, foreground=False) 
+
+ ```  ``` 
+
+          
+
