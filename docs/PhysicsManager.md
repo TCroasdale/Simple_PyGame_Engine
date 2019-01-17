@@ -8,11 +8,11 @@
 
  > Adds a static rectangle collider to the scene.
 
- > 
+ 
 
- > Keyword arguments:
+ Keyword arguments:
 
- > rectangle -- The Rect to add to the scene. 
+ rectangle -- The Rect to add to the scene. 
 
 ## draw_debug(size, rootNode) 
 
@@ -20,19 +20,19 @@
 
  > Draws all the colliders to the screen in transparent green.
 
- > 
+ 
 
- > Keyword arguments:
+ Keyword arguments:
 
- > size -- The size of the surface to create and draw to.
+ size -- The size of the surface to create and draw to.
 
- > rootNode -- The root scene node of the scene.
+ rootNode -- The root scene node of the scene.
 
- > 
+ 
 
- > Returns:
+ Returns:
 
- > A pygame surface with all colliders drawn to it. 
+ A pygame surface with all colliders drawn to it. 
 
 ## handle_collision(node1, node2) 
 
@@ -40,13 +40,13 @@
 
  > Called upon finding a collision. Fixes the collisions, and tells the scenenodes to handle_collision.
 
- > 
+ 
 
- > Keyword arguments:
+ Keyword arguments:
 
- > node1 -- The primary node of the collision, will be the one reacting to the collision
+ node1 -- The primary node of the collision, will be the one reacting to the collision
 
- > node2 -- The secondary node of the collision, or a Rect object of a static coliider. 
+ node2 -- The secondary node of the collision, or a Rect object of a static coliider. 
 
 ## remove_all_colliders() 
 
@@ -60,9 +60,9 @@
 
  > Called once per frame, checks the scene graph for collisions between scene nodes and startic colliders.
 
- > 
+ 
 
- > Keyword arguments:
+ Keyword arguments:
 
- > rootNode -- The root scene node of the scene graph. 
+ rootNode -- The root scene node of the scene graph. 
 

@@ -8,17 +8,17 @@
 
  > Constructor for a Tileset Object.
 
- > 
+ 
 
- > Keyword arguments:
+ Keyword arguments:
 
- > id -- The id in TextureManager of the tileset image.
+ id -- The id in TextureManager of the tileset image.
 
- > path -- The file path of the tileset image.
+ path -- The file path of the tileset image.
 
- > tX -- The width of tiles in the image.
+ tX -- The width of tiles in the image.
 
- > tY -- The height of tiles in the image. 
+ tY -- The height of tiles in the image. 
 
 ## __str__(self) 
 

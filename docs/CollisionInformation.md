@@ -8,15 +8,15 @@
 
  > Constructor for this class.
 
- > 
+ 
 
- > Keyword arguments:
+ Keyword arguments:
 
- > colDir -- The CollisionDirection of the described collision.
+ colDir -- The CollisionDirection of the described collision.
 
- > centerpos -- The center position of the Collision.4
+ centerpos -- The center position of the Collision.4
 
- > otherNode -- The other node affected by this collision, may not exist. (default = None) 
+ otherNode -- The other node affected by this collision, may not exist. (default = None) 
 
 ## __str__(self) 
 

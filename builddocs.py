@@ -32,7 +32,7 @@ def create_md_file(classname, classdoc, functions):
     for fn in functions:
         if functions[fn][0] is not None:
             # functions[fn][0] is the docstring, functions[fn][1] is the signature, 
-            full_file += function_def.format(fn, functions[fn][1], functions[fn][0].replace("\n", "\n\n > "))
+            full_file += function_def.format(fn, functions[fn][1], functions[fn][0].replace("\n", "\n\n "))
 
 
     file = open("docs/{0}.md".format(classname), "w") 
