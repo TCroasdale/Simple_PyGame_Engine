@@ -10,7 +10,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  id -- The ID of the Tile in the Tilesheet.
 
@@ -22,3 +22,4 @@
 
  > Returns a string representation of this object 
 
+--- 

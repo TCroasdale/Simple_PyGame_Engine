@@ -10,7 +10,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  colDir -- The CollisionDirection of the described collision.
 
@@ -24,3 +24,4 @@
 
  > returns the string representation of this class. 
 
+--- 

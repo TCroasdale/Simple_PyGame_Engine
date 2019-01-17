@@ -10,7 +10,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  id -- The ID to assign the keycode to.
 
@@ -24,7 +24,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  id -- The ID assigned to the control. 
 
@@ -36,7 +36,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  id -- The ID assigned to the control. 
 
@@ -48,7 +48,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  id -- The ID assigned to the control. 
 
@@ -66,7 +66,8 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  events -- The events list received from pygame.event.get() 
 
+--- 

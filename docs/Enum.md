@@ -4,3 +4,4 @@
 
 Derive from this class to define new enumerations. 
 ```
+--- 

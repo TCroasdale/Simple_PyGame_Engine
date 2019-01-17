@@ -10,7 +10,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  id -- The id in TextureManager of the tileset image.
 
@@ -26,3 +26,4 @@
 
  > Returns a string representation of this object 
 
+--- 

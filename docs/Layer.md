@@ -10,7 +10,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  name -- The name of the layer.
 
@@ -26,3 +26,4 @@
 
  > Returns a string representation of this object 
 
+--- 

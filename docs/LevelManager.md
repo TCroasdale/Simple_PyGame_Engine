@@ -16,7 +16,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  levelname -- The file name of the OGMO level, exluding the directory and .oel extension. 
 
@@ -28,7 +28,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  screen -- The pygame screen to blit the images to.
 
@@ -40,3 +40,4 @@
 
  > Setups the LevelManager and reads in the level project data, such as all layers and background colour. 
 
+--- 

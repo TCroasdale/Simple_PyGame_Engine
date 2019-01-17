@@ -10,7 +10,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  rectangle -- The Rect to add to the scene. 
 
@@ -22,7 +22,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  size -- The size of the surface to create and draw to.
 
@@ -30,7 +30,7 @@
 
  
 
- Returns:
+ **Returns:**
 
  A pygame surface with all colliders drawn to it. 
 
@@ -42,7 +42,7 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  node1 -- The primary node of the collision, will be the one reacting to the collision
 
@@ -62,7 +62,8 @@
 
  
 
- Keyword arguments:
+ **Keyword arguments:**
 
  rootNode -- The root scene node of the scene graph. 
 
+--- 
