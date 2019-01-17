@@ -29,10 +29,10 @@ def create_md_file(classname, classdoc, functions):
 
     full_file = title.format(classname, classdoc)
 
-    full_file += "## Methods: "
+    full_file += "## Methods: \n"
     for fn in functions:
         if functions[fn][0] is not None:
-            full_file += "* [{0}({1})](/#{0}{1}) \n".format(fn, str(functions[fn][1])[1:-1].replace(", ", "-"))
+            full_file += "* [{0}({1})](#{0}{1}) \n".format(fn, str(functions[fn][1])[1:-1].replace(", ", "-"))
 
     
     for fn in functions:

@@ -2,11 +2,12 @@
  ```
  Manager class for physics calculations and representations. 
 ```
-## Methods: * [add_collider(rectangle)](/#add_colliderrectangle) 
-* [draw_debug(size-rootNode)](/#draw_debugsize-rootNode) 
-* [handle_collision(node1-node2)](/#handle_collisionnode1-node2) 
-* [remove_all_colliders()](/#remove_all_colliders) 
-* [run_checks(rootNode)](/#run_checksrootNode) 
+## Methods: 
+* [add_collider(rectangle)](#add_colliderrectangle) 
+* [draw_debug(size-rootNode)](#draw_debugsize-rootNode) 
+* [handle_collision(node1-node2)](#handle_collisionnode1-node2) 
+* [remove_all_colliders()](#remove_all_colliders) 
+* [run_checks(rootNode)](#run_checksrootNode) 
 ## add_collider(rectangle) 
 
   

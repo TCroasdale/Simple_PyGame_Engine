@@ -2,7 +2,8 @@
  ```
  None 
 ```
-## Methods: * [__init__(self)](/#__init__self) 
+## Methods: 
+* [__init__(self)](#__init__self) 
 ## __init__(self) 
 
   

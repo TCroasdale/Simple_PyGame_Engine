@@ -4,4 +4,5 @@
 
 Derive from this class to define new enumerations. 
 ```
-## Methods: --- 
+## Methods: 
+--- 

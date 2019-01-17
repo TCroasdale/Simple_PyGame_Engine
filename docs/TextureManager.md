@@ -2,4 +2,5 @@
  ```
  TextureManager  
 ```
-## Methods: --- 
+## Methods: 
+--- 

@@ -2,8 +2,9 @@
  ```
  This class represents a single tile in the world. 
 ```
-## Methods: * [__init__(self-id-position)](/#__init__self-id-position) 
-* [__str__(self)](/#__str__self) 
+## Methods: 
+* [__init__(self-id-position)](#__init__self-id-position) 
+* [__str__(self)](#__str__self) 
 ## __init__(self, id, position) 
 
   
