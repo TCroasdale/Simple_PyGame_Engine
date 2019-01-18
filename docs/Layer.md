@@ -1,10 +1,8 @@
 # Layer 
- ```
- Represents a single layer of the world. 
-```
+  Represents a single layer of the world. 
+
 ## Methods: 
 * [Constructor(self, name, tX, tY, tiles=[], tileset=None)](#Constructor) 
-* [__str__(self)](#__str__) 
 <div id="Constructor"></div>
 
 ## Constructor(self, name, tX, tY, tiles=[], tileset=None) 
@@ -24,14 +22,5 @@
  tiles -- A list of tiles present in this layer (default = [])
 
  tileset -- The tiles set to use for this layer (defaul = None) 
-
- --- 
-<div id="__str__"></div>
-
-## __str__(self) 
-
-  
-
- > Returns a string representation of this object 
 
  --- 

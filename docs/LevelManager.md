@@ -1,7 +1,6 @@
 # LevelManager 
- ```
- This class manages loading and reading level files. 
-```
+  This class manages loading and reading level files. 
+
 ## Methods: 
 * [get_fill_colour()](#get_fill_colour) 
 * [load_level(levelname)](#load_level) 

@@ -1,7 +1,6 @@
 # InputManager 
- ```
- InputManager is the class responsible for registering, and keeping current inputs up to date. 
-```
+  InputManager is the class responsible for registering, and keeping current inputs up to date. 
+
 ## Methods: 
 * [assign_control(id, key)](#assign_control) 
 * [get_control(id)](#get_control) 
@@ -23,7 +22,13 @@
 
  id -- The ID to assign the keycode to.
 
- key -- The keycode to assign 
+ key -- The keycode to assign
+
+ 
+
+ **Raises:**
+
+ ControlExistsExeception -- When id has already been assigned to a control. 
 
  --- 
 <div id="get_control"></div>
@@ -38,7 +43,13 @@
 
  **Keyword arguments:**
 
- id -- The ID assigned to the control. 
+ id -- The ID assigned to the control.
+
+ 
+
+ **Raises:**
+
+ ControlDoesntExistException -- When id has not been assigned to a control. 
 
  --- 
 <div id="get_control_pressed"></div>
@@ -53,7 +64,13 @@
 
  **Keyword arguments:**
 
- id -- The ID assigned to the control. 
+ id -- The ID assigned to the control.
+
+ 
+
+ **Raises:**
+
+ ControlDoesntExistException -- When id has not been assigned to a control. 
 
  --- 
 <div id="get_control_released"></div>
@@ -68,7 +85,13 @@
 
  **Keyword arguments:**
 
- id -- The ID assigned to the control. 
+ id -- The ID assigned to the control.
+
+ 
+
+ **Raises:**
+
+ ControlDoesntExistException -- When id has not been assigned to a control. 
 
  --- 
 <div id="setup"></div>

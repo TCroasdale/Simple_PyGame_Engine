@@ -1,14 +1,16 @@
 # SceneNode 
- ```
- A Scene node which will be added to the scene graph. Can have an associated object attached to it. 
-```
+  A Scene node which will be added to the scene graph. Can have an associated object attached to it. 
+
 ## Methods: 
 * [Constructor(self, parent=None, object=None, type=<NodeType.Dynamic: 0>)](#Constructor) 
 * [addChild(self, node)](#addChild) 
 * [attachObject(self, obj)](#attachObject) 
 * [getBounds(self)](#getBounds) 
 * [getWorldPosition(self)](#getWorldPosition) 
+* [get_all_children(self)](#get_all_children) 
 * [handle_collision(self, coll_data)](#handle_collision) 
+* [render(self, screen)](#render) 
+* [to_string(self, numtabs=0)](#to_string) 
 * [translate(self, amount)](#translate) 
 * [update(self, delta)](#update) 
 <div id="Constructor"></div>
@@ -90,6 +92,21 @@
  A Tuple (x, y) representing the position of this node. 
 
  --- 
+<div id="get_all_children"></div>
+
+## get_all_children(self) 
+
+  
+
+ > Returns a list of every child node beneath this node in the scene graph.
+
+ 
+
+ **Returns:**
+
+ A list of SceneNodes 
+
+ --- 
 <div id="handle_collision"></div>
 
 ## handle_collision(self, coll_data) 
@@ -103,6 +120,36 @@
  **Keyword arguments:**
 
  coll_data -- The CollisionInformation Object describing the collision. 
+
+ --- 
+<div id="render"></div>
+
+## render(self, screen) 
+
+  
+
+ > Draws the attached object to screen, and called render() on children nodes.
+
+ 
+
+ **Keyword arguments:**
+
+ screen -- The Pygame surface to blit the attached object to. 
+
+ --- 
+<div id="to_string"></div>
+
+## to_string(self, numtabs=0) 
+
+  
+
+ > A simple function to print the scenegraph beneath this node to the console.
+
+ 
+
+ **Keyword arguments:** 
+
+ numtabs -- The number of tabs to put before printing the node. (default = 0) 
 
  --- 
 <div id="translate"></div>

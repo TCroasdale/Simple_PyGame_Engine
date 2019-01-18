@@ -21,6 +21,9 @@ class InputManager:
 
         Keyword arguments:
         id -- The ID assigned to the control.
+
+        Raises:
+        ControlDoesntExistException -- When id has not been assigned to a control.
         """
         if id in InputManager.controls:
             key = InputManager.controls[id]
@@ -35,6 +38,9 @@ class InputManager:
 
         Keyword arguments:
         id -- The ID assigned to the control.
+        
+        Raises:
+        ControlDoesntExistException -- When id has not been assigned to a control.
         """
         if id in InputManager.controls:
             key = InputManager.controls[id]
@@ -49,6 +55,9 @@ class InputManager:
 
         Keyword arguments:
         id -- The ID assigned to the control.
+        
+        Raises:
+        ControlDoesntExistException -- When id has not been assigned to a control.
         """
         if id in InputManager.controls:
             key = InputManager.controls[id]
@@ -84,6 +93,9 @@ class InputManager:
         Keyword arguments:
         id -- The ID to assign the keycode to.
         key -- The keycode to assign
+
+        Raises:
+        ControlExistsExeception -- When id has already been assigned to a control.
         """
         if id not in InputManager.controls:
             print("Assigning key {0} to id: {1}".format(pygame.key.name(key), id))

@@ -1,7 +1,6 @@
 # Object 
- ```
- An Object in the scene representing by a texture. An object can be attached to a scene node. 
-```
+  An Object in the scene representing by a texture. An object can be attached to a scene node. 
+
 ## Methods: 
 * [Constructor(self, scenenode=None)](#Constructor) 
 * [handle_collision(self, collision_data)](#handle_collision) 

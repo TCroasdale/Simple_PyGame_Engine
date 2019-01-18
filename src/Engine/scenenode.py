@@ -109,6 +109,12 @@ class SceneNode:
             child.update(delta)
 
     def render(self, screen):
+        """
+        Draws the attached object to screen, and called render() on children nodes.
+
+        Keyword arguments:
+        screen -- The Pygame surface to blit the attached object to.
+        """
         if self.attachedObject != None:
             texture = TextureManager.get_texture(self.attachedObject.textureID)
             rect = Rect(self.getWorldPosition(), self.attachedObject.size)
@@ -118,6 +124,12 @@ class SceneNode:
             child.render(screen)
 
     def get_all_children(self):
+        """
+        Returns a list of every child node beneath this node in the scene graph.
+
+        Returns:
+        A list of SceneNodes
+        """
         if len(self.children) == 0:
             return []
         else:
@@ -128,9 +140,15 @@ class SceneNode:
             return all_children
 
     def to_string(self, numtabs=0):
+        """
+        A simple function to print the scenegraph beneath this node to the console.
+
+        Keyword arguments: 
+        numtabs -- The number of tabs to put before printing the node. (default = 0)
+        """
         print(" "*numtabs, "node")
         for child in self.children:
-            child.to_string
+            child.print_to_console(numtabs+1)
 
 
     #Iterator Functions

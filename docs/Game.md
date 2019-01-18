@@ -1,7 +1,6 @@
 # Game 
- ```
- None 
-```
+  None 
+
 ## Methods: 
 * [Constructor(self)](#Constructor) 
 <div id="Constructor"></div>

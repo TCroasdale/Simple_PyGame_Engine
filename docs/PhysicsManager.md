@@ -1,7 +1,6 @@
 # PhysicsManager 
- ```
- Manager class for physics calculations and representations. 
-```
+  Manager class for physics calculations and representations. 
+
 ## Methods: 
 * [add_collider(rectangle)](#add_collider) 
 * [draw_debug(size, rootNode)](#draw_debug) 

@@ -1,10 +1,8 @@
 # CollisionInformation 
- ```
- Class containing relevant information from a collision. 
-```
+  Class containing relevant information from a collision. 
+
 ## Methods: 
 * [Constructor(self, colDir, centerpos, otherNode=None)](#Constructor) 
-* [__str__(self)](#__str__) 
 <div id="Constructor"></div>
 
 ## Constructor(self, colDir, centerpos, otherNode=None) 
@@ -22,14 +20,5 @@
  centerpos -- The center position of the Collision.4
 
  otherNode -- The other node affected by this collision, may not exist. (default = None) 
-
- --- 
-<div id="__str__"></div>
-
-## __str__(self) 
-
-  
-
- > returns the string representation of this class. 
 
  --- 

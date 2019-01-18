@@ -1,36 +1,11 @@
 # Event 
- ```
- list() -> new empty list
-list(iterable) -> new list initialized from iterable's items 
-```
-## Methods: 
-* [__call__(self, *args, **kwargs)](#__call__) 
-* [__iadd__(self, handler)](#__iadd__) 
-* [__repr__(self)](#__repr__) 
-<div id="__call__"></div>
+  The event class allows the creation of simple events when needed.
+to create a custom event
+` event = Event() `
 
-## __call__(self, *args, **kwargs) 
+to subscribe to an event
+` event += function_to_call_on_event `
 
-  
+to call an event
+` event() ` 
 
- > Call self as a function. 
-
- --- 
-<div id="__iadd__"></div>
-
-## __iadd__(self, handler) 
-
-  
-
- > Implement self+=value. 
-
- --- 
-<div id="__repr__"></div>
-
-## __repr__(self) 
-
-  
-
- > Return repr(self). 
-
- --- 

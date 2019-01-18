@@ -1,5 +1,3 @@
 # TextureExistsError 
- ```
- Common base class for all non-exit exceptions. 
-```
-## Methods: 
+  Raised when a TextureID is already in use. 
+
