@@ -3,9 +3,9 @@
  Class to represent a tileset image in terms of file location and gridsize. 
 ```
 ## Methods: 
-* [__init__(self, id, locale, tX, tY)](#__init__self-id-locale-tX-tY) 
-* [__str__(self)](#__str__self) 
-## __init__(self, id, locale, tX, tY) 
+* [Constructor(self, id, locale, tX, tY)](#Constructor) 
+* [__str__(self)](#__str__) 
+<div id="Constructor"></div>## Constructor(self, id, locale, tX, tY) 
 
   
 
@@ -24,7 +24,7 @@
  tY -- The height of tiles in the image. 
 
  --- 
-## __str__(self) 
+<div id="__str__"></div>## __str__(self) 
 
   
 

@@ -3,13 +3,13 @@
  InputManager is the class responsible for registering, and keeping current inputs up to date. 
 ```
 ## Methods: 
-* [assign_control(id, key)](#assign_controlid-key) 
-* [get_control(id)](#get_controlid) 
-* [get_control_pressed(id)](#get_control_pressedid) 
-* [get_control_released(id)](#get_control_releasedid) 
+* [assign_control(id, key)](#assign_control) 
+* [get_control(id)](#get_control) 
+* [get_control_pressed(id)](#get_control_pressed) 
+* [get_control_released(id)](#get_control_released) 
 * [setup()](#setup) 
-* [update(events)](#updateevents) 
-## assign_control(id, key) 
+* [update(events)](#update) 
+<div id="assign_control"></div>## assign_control(id, key) 
 
   
 
@@ -24,7 +24,7 @@
  key -- The keycode to assign 
 
  --- 
-## get_control(id) 
+<div id="get_control"></div>## get_control(id) 
 
   
 
@@ -37,7 +37,7 @@
  id -- The ID assigned to the control. 
 
  --- 
-## get_control_pressed(id) 
+<div id="get_control_pressed"></div>## get_control_pressed(id) 
 
   
 
@@ -50,7 +50,7 @@
  id -- The ID assigned to the control. 
 
  --- 
-## get_control_released(id) 
+<div id="get_control_released"></div>## get_control_released(id) 
 
   
 
@@ -63,14 +63,14 @@
  id -- The ID assigned to the control. 
 
  --- 
-## setup() 
+<div id="setup"></div>## setup() 
 
   
 
  > setup should be called when the game starts up, it creates empty dictionaries for the the controls. 
 
  --- 
-## update(events) 
+<div id="update"></div>## update(events) 
 
   
 

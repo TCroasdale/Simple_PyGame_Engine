@@ -3,8 +3,8 @@
  None 
 ```
 ## Methods: 
-* [__init__(self)](#__init__self) 
-## __init__(self) 
+* [Constructor(self)](#Constructor) 
+<div id="Constructor"></div>## Constructor(self) 
 
   
 

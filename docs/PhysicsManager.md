@@ -3,12 +3,12 @@
  Manager class for physics calculations and representations. 
 ```
 ## Methods: 
-* [add_collider(rectangle)](#add_colliderrectangle) 
-* [draw_debug(size, rootNode)](#draw_debugsize-rootNode) 
-* [handle_collision(node1, node2)](#handle_collisionnode1-node2) 
+* [add_collider(rectangle)](#add_collider) 
+* [draw_debug(size, rootNode)](#draw_debug) 
+* [handle_collision(node1, node2)](#handle_collision) 
 * [remove_all_colliders()](#remove_all_colliders) 
-* [run_checks(rootNode)](#run_checksrootNode) 
-## add_collider(rectangle) 
+* [run_checks(rootNode)](#run_checks) 
+<div id="add_collider"></div>## add_collider(rectangle) 
 
   
 
@@ -21,7 +21,7 @@
  rectangle -- The Rect to add to the scene. 
 
  --- 
-## draw_debug(size, rootNode) 
+<div id="draw_debug"></div>## draw_debug(size, rootNode) 
 
   
 
@@ -42,7 +42,7 @@
  A pygame surface with all colliders drawn to it. 
 
  --- 
-## handle_collision(node1, node2) 
+<div id="handle_collision"></div>## handle_collision(node1, node2) 
 
   
 
@@ -57,14 +57,14 @@
  node2 -- The secondary node of the collision, or a Rect object of a static coliider. 
 
  --- 
-## remove_all_colliders() 
+<div id="remove_all_colliders"></div>## remove_all_colliders() 
 
   
 
  > Clears all static rectangle colliders from the scene. 
 
  --- 
-## run_checks(rootNode) 
+<div id="run_checks"></div>## run_checks(rootNode) 
 
   
 

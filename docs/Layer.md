@@ -3,9 +3,9 @@
  Represents a single layer of the world. 
 ```
 ## Methods: 
-* [__init__(self, name, tX, tY, tiles=[], tileset=None)](#__init__self-name-tX-tY-tiles=[]-tileset=None) 
-* [__str__(self)](#__str__self) 
-## __init__(self, name, tX, tY, tiles=[], tileset=None) 
+* [Constructor(self, name, tX, tY, tiles=[], tileset=None)](#Constructor) 
+* [__str__(self)](#__str__) 
+<div id="Constructor"></div>## Constructor(self, name, tX, tY, tiles=[], tileset=None) 
 
   
 
@@ -24,7 +24,7 @@
  tileset -- The tiles set to use for this layer (defaul = None) 
 
  --- 
-## __str__(self) 
+<div id="__str__"></div>## __str__(self) 
 
   
 

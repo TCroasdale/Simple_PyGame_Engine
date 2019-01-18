@@ -4,17 +4,17 @@
 ```
 ## Methods: 
 * [get_fill_colour()](#get_fill_colour) 
-* [load_level(levelname)](#load_levellevelname) 
-* [render_level(screen, foreground=False)](#render_levelscreen-foreground=False) 
+* [load_level(levelname)](#load_level) 
+* [render_level(screen, foreground=False)](#render_level) 
 * [setup()](#setup) 
-## get_fill_colour() 
+<div id="get_fill_colour"></div>## get_fill_colour() 
 
   
 
  > Returns the fill colour specified in the level file. 
 
  --- 
-## load_level(levelname) 
+<div id="load_level"></div>## load_level(levelname) 
 
   
 
@@ -27,7 +27,7 @@
  levelname -- The file name of the OGMO level, exluding the directory and .oel extension. 
 
  --- 
-## render_level(screen, foreground=False) 
+<div id="render_level"></div>## render_level(screen, foreground=False) 
 
   
 
@@ -42,7 +42,7 @@
  foreground -- Whether to draw foregroudn layers or not. (default = False) 
 
  --- 
-## setup() 
+<div id="setup"></div>## setup() 
 
   
 

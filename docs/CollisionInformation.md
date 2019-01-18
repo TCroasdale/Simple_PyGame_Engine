@@ -3,9 +3,9 @@
  Class containing relevant information from a collision. 
 ```
 ## Methods: 
-* [__init__(self, colDir, centerpos, otherNode=None)](#__init__self-colDir-centerpos-otherNode=None) 
-* [__str__(self)](#__str__self) 
-## __init__(self, colDir, centerpos, otherNode=None) 
+* [Constructor(self, colDir, centerpos, otherNode=None)](#Constructor) 
+* [__str__(self)](#__str__) 
+<div id="Constructor"></div>## Constructor(self, colDir, centerpos, otherNode=None) 
 
   
 
@@ -22,7 +22,7 @@
  otherNode -- The other node affected by this collision, may not exist. (default = None) 
 
  --- 
-## __str__(self) 
+<div id="__str__"></div>## __str__(self) 
 
   
 
