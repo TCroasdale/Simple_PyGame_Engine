@@ -6,4 +6,3 @@ Rect(object) -> Rect
 pygame object for storing rectangular coordinates 
 ```
 ## Methods: 
---- 

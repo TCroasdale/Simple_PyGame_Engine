@@ -29,12 +29,13 @@ def create_md_file(classname, classdoc, functions):
 
     full_file = title.format(classname, classdoc)
 
+    # Creates a list of all the methods with links to their sections.
     full_file += "## Methods: \n"
     for fn in functions:
         if functions[fn][0] is not None:
-            full_file += "* [{0}({1})](#{0}{1}) \n".format(fn, str(functions[fn][1])[1:-1].replace(", ", "-"))
+            full_file += "* [{0}{1}](#{0}{2}) \n".format(fn, functions[fn][1], str(functions[fn][1])[1:-1].replace(", ", "-"))
 
-    
+    # Creates all the sections for the methods, so long as they have docstrings
     for fn in functions:
         if functions[fn][0] is not None:
             # functions[fn][0] is the docstring, functions[fn][1] is the signature, 
@@ -43,8 +44,9 @@ def create_md_file(classname, classdoc, functions):
             fstring = fstring.replace("Keyword arguments:", "**Keyword arguments:**")
             fstring = fstring.replace("Returns:", "**Returns:**")
             full_file += function_def.format(fn, functions[fn][1], fstring)
+            full_file += " --- \n"
 
-    full_file += "--- "
+    
     file = open("docs/{0}.md".format(classname), "w") 
     file.write(full_file)
 

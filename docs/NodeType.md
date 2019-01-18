@@ -3,4 +3,3 @@
  An enumeration. 
 ```
 ## Methods: 
---- 

@@ -4,8 +4,8 @@
 ```
 ## Methods: 
 * [add_collider(rectangle)](#add_colliderrectangle) 
-* [draw_debug(size-rootNode)](#draw_debugsize-rootNode) 
-* [handle_collision(node1-node2)](#handle_collisionnode1-node2) 
+* [draw_debug(size, rootNode)](#draw_debugsize-rootNode) 
+* [handle_collision(node1, node2)](#handle_collisionnode1-node2) 
 * [remove_all_colliders()](#remove_all_colliders) 
 * [run_checks(rootNode)](#run_checksrootNode) 
 ## add_collider(rectangle) 
@@ -20,6 +20,7 @@
 
  rectangle -- The Rect to add to the scene. 
 
+ --- 
 ## draw_debug(size, rootNode) 
 
   
@@ -40,6 +41,7 @@
 
  A pygame surface with all colliders drawn to it. 
 
+ --- 
 ## handle_collision(node1, node2) 
 
   
@@ -54,12 +56,14 @@
 
  node2 -- The secondary node of the collision, or a Rect object of a static coliider. 
 
+ --- 
 ## remove_all_colliders() 
 
   
 
  > Clears all static rectangle colliders from the scene. 
 
+ --- 
 ## run_checks(rootNode) 
 
   
@@ -72,4 +76,4 @@
 
  rootNode -- The root scene node of the scene graph. 
 
---- 
+ --- 

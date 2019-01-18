@@ -6,4 +6,3 @@ Color(rgbvalue) -> Color
 pygame object for color representations 
 ```
 ## Methods: 
---- 
