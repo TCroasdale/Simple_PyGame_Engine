@@ -45,7 +45,7 @@ def create_md_file(classname, classdoc, functions):
             fstring = fstring.replace("\n", "\n\n ")
             fstring = fstring.replace("Keyword arguments:", "**Keyword arguments:**")
             fstring = fstring.replace("Returns:", "**Returns:**")
-            full_file += '<div id="{0}"></div>'.format(fn)
+            full_file += '<div id="{0}"></div>\n\n'.format(fn)
             full_file += function_def.format(fn, functions[fn][1], fstring)
             full_file += " --- \n"
 

@@ -5,7 +5,9 @@
 ## Methods: 
 * [Constructor(self, id, position)](#Constructor) 
 * [__str__(self)](#__str__) 
-<div id="Constructor"></div>## Constructor(self, id, position) 
+<div id="Constructor"></div>
+
+## Constructor(self, id, position) 
 
   
 
@@ -20,7 +22,9 @@
  Position -- The Position of the Tile in the form (x, y). 
 
  --- 
-<div id="__str__"></div>## __str__(self) 
+<div id="__str__"></div>
+
+## __str__(self) 
 
   
 

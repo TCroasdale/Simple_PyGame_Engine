@@ -5,7 +5,9 @@
 ## Methods: 
 * [Constructor(self, colDir, centerpos, otherNode=None)](#Constructor) 
 * [__str__(self)](#__str__) 
-<div id="Constructor"></div>## Constructor(self, colDir, centerpos, otherNode=None) 
+<div id="Constructor"></div>
+
+## Constructor(self, colDir, centerpos, otherNode=None) 
 
   
 
@@ -22,7 +24,9 @@
  otherNode -- The other node affected by this collision, may not exist. (default = None) 
 
  --- 
-<div id="__str__"></div>## __str__(self) 
+<div id="__str__"></div>
+
+## __str__(self) 
 
   
 

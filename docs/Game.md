@@ -4,7 +4,9 @@
 ```
 ## Methods: 
 * [Constructor(self)](#Constructor) 
-<div id="Constructor"></div>## Constructor(self) 
+<div id="Constructor"></div>
+
+## Constructor(self) 
 
   
 

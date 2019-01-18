@@ -5,7 +5,9 @@
 ## Methods: 
 * [Constructor(self, id, locale, tX, tY)](#Constructor) 
 * [__str__(self)](#__str__) 
-<div id="Constructor"></div>## Constructor(self, id, locale, tX, tY) 
+<div id="Constructor"></div>
+
+## Constructor(self, id, locale, tX, tY) 
 
   
 
@@ -24,7 +26,9 @@
  tY -- The height of tiles in the image. 
 
  --- 
-<div id="__str__"></div>## __str__(self) 
+<div id="__str__"></div>
+
+## __str__(self) 
 
   
 

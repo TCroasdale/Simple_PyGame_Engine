@@ -11,7 +11,9 @@
 * [handle_collision(self, coll_data)](#handle_collision) 
 * [translate(self, amount)](#translate) 
 * [update(self, delta)](#update) 
-<div id="Constructor"></div>## Constructor(self, parent=None, object=None, type=<NodeType.Dynamic: 0>) 
+<div id="Constructor"></div>
+
+## Constructor(self, parent=None, object=None, type=<NodeType.Dynamic: 0>) 
 
   
 
@@ -28,7 +30,9 @@
  type -- The NodeType of this Node (default = NodeType.Dynamic) 
 
  --- 
-<div id="addChild"></div>## addChild(self, node) 
+<div id="addChild"></div>
+
+## addChild(self, node) 
 
   
 
@@ -41,7 +45,9 @@
  node -- The node to become a child of this 
 
  --- 
-<div id="attachObject"></div>## attachObject(self, obj) 
+<div id="attachObject"></div>
+
+## attachObject(self, obj) 
 
   
 
@@ -54,7 +60,9 @@
  obj -- The Object to attach to this node. 
 
  --- 
-<div id="getBounds"></div>## getBounds(self) 
+<div id="getBounds"></div>
+
+## getBounds(self) 
 
   
 
@@ -67,7 +75,9 @@
  a Rect containing the world position and size of this node. 
 
  --- 
-<div id="getWorldPosition"></div>## getWorldPosition(self) 
+<div id="getWorldPosition"></div>
+
+## getWorldPosition(self) 
 
   
 
@@ -80,7 +90,9 @@
  A Tuple (x, y) representing the position of this node. 
 
  --- 
-<div id="handle_collision"></div>## handle_collision(self, coll_data) 
+<div id="handle_collision"></div>
+
+## handle_collision(self, coll_data) 
 
   
 
@@ -93,7 +105,9 @@
  coll_data -- The CollisionInformation Object describing the collision. 
 
  --- 
-<div id="translate"></div>## translate(self, amount) 
+<div id="translate"></div>
+
+## translate(self, amount) 
 
   
 
@@ -106,7 +120,9 @@
  amount -- (tx, ty) How much to move this node by. 
 
  --- 
-<div id="update"></div>## update(self, delta) 
+<div id="update"></div>
+
+## update(self, delta) 
 
   
 

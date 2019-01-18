@@ -11,7 +11,9 @@
 * [setTextureID(self, id)](#setTextureID) 
 * [switch_texture(self, newTexture)](#switch_texture) 
 * [update(self, delta)](#update) 
-<div id="Constructor"></div>## Constructor(self, scenenode=None) 
+<div id="Constructor"></div>
+
+## Constructor(self, scenenode=None) 
 
   
 
@@ -24,7 +26,9 @@
  scenenode -- The scene node which this object is attached to. (default = None) 
 
  --- 
-<div id="handle_collision"></div>## handle_collision(self, collision_data) 
+<div id="handle_collision"></div>
+
+## handle_collision(self, collision_data) 
 
   
 
@@ -37,7 +41,9 @@
  collision_data -- The CollisionInformation object describing the collision. 
 
  --- 
-<div id="move"></div>## move(self, amount) 
+<div id="move"></div>
+
+## move(self, amount) 
 
   
 
@@ -50,7 +56,9 @@
  amount -- (tx, ty) How much to translate by. 
 
  --- 
-<div id="setSceneNode"></div>## setSceneNode(self, node) 
+<div id="setSceneNode"></div>
+
+## setSceneNode(self, node) 
 
   
 
@@ -63,7 +71,9 @@
  node -- The node which this object is now attached to. 
 
  --- 
-<div id="setSize"></div>## setSize(self, size) 
+<div id="setSize"></div>
+
+## setSize(self, size) 
 
   
 
@@ -76,7 +86,9 @@
  size -- A Tuple of Width and Height (w, h) 
 
  --- 
-<div id="setTextureID"></div>## setTextureID(self, id) 
+<div id="setTextureID"></div>
+
+## setTextureID(self, id) 
 
   
 
@@ -89,7 +101,9 @@
  id -- The TextureID stored in TextureManager 
 
  --- 
-<div id="switch_texture"></div>## switch_texture(self, newTexture) 
+<div id="switch_texture"></div>
+
+## switch_texture(self, newTexture) 
 
   
 
@@ -102,7 +116,9 @@
  newTexture -- The TextureID to switch to. 
 
  --- 
-<div id="update"></div>## update(self, delta) 
+<div id="update"></div>
+
+## update(self, delta) 
 
   
 

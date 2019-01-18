@@ -4,7 +4,9 @@
 ```
 ## Methods: 
 * [Constructor(self, tex, f=1, sRect=None)](#Constructor) 
-<div id="Constructor"></div>## Constructor(self, tex, f=1, sRect=None) 
+<div id="Constructor"></div>
+
+## Constructor(self, tex, f=1, sRect=None) 
 
   
 

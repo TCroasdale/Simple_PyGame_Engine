@@ -8,7 +8,9 @@
 * [handle_collision(node1, node2)](#handle_collision) 
 * [remove_all_colliders()](#remove_all_colliders) 
 * [run_checks(rootNode)](#run_checks) 
-<div id="add_collider"></div>## add_collider(rectangle) 
+<div id="add_collider"></div>
+
+## add_collider(rectangle) 
 
   
 
@@ -21,7 +23,9 @@
  rectangle -- The Rect to add to the scene. 
 
  --- 
-<div id="draw_debug"></div>## draw_debug(size, rootNode) 
+<div id="draw_debug"></div>
+
+## draw_debug(size, rootNode) 
 
   
 
@@ -42,7 +46,9 @@
  A pygame surface with all colliders drawn to it. 
 
  --- 
-<div id="handle_collision"></div>## handle_collision(node1, node2) 
+<div id="handle_collision"></div>
+
+## handle_collision(node1, node2) 
 
   
 
@@ -57,14 +63,18 @@
  node2 -- The secondary node of the collision, or a Rect object of a static coliider. 
 
  --- 
-<div id="remove_all_colliders"></div>## remove_all_colliders() 
+<div id="remove_all_colliders"></div>
+
+## remove_all_colliders() 
 
   
 
  > Clears all static rectangle colliders from the scene. 
 
  --- 
-<div id="run_checks"></div>## run_checks(rootNode) 
+<div id="run_checks"></div>
+
+## run_checks(rootNode) 
 
   
 

@@ -9,7 +9,9 @@
 * [get_control_released(id)](#get_control_released) 
 * [setup()](#setup) 
 * [update(events)](#update) 
-<div id="assign_control"></div>## assign_control(id, key) 
+<div id="assign_control"></div>
+
+## assign_control(id, key) 
 
   
 
@@ -24,7 +26,9 @@
  key -- The keycode to assign 
 
  --- 
-<div id="get_control"></div>## get_control(id) 
+<div id="get_control"></div>
+
+## get_control(id) 
 
   
 
@@ -37,7 +41,9 @@
  id -- The ID assigned to the control. 
 
  --- 
-<div id="get_control_pressed"></div>## get_control_pressed(id) 
+<div id="get_control_pressed"></div>
+
+## get_control_pressed(id) 
 
   
 
@@ -50,7 +56,9 @@
  id -- The ID assigned to the control. 
 
  --- 
-<div id="get_control_released"></div>## get_control_released(id) 
+<div id="get_control_released"></div>
+
+## get_control_released(id) 
 
   
 
@@ -63,14 +71,18 @@
  id -- The ID assigned to the control. 
 
  --- 
-<div id="setup"></div>## setup() 
+<div id="setup"></div>
+
+## setup() 
 
   
 
  > setup should be called when the game starts up, it creates empty dictionaries for the the controls. 
 
  --- 
-<div id="update"></div>## update(events) 
+<div id="update"></div>
+
+## update(events) 
 
   
 

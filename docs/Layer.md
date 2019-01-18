@@ -5,7 +5,9 @@
 ## Methods: 
 * [Constructor(self, name, tX, tY, tiles=[], tileset=None)](#Constructor) 
 * [__str__(self)](#__str__) 
-<div id="Constructor"></div>## Constructor(self, name, tX, tY, tiles=[], tileset=None) 
+<div id="Constructor"></div>
+
+## Constructor(self, name, tX, tY, tiles=[], tileset=None) 
 
   
 
@@ -24,7 +26,9 @@
  tileset -- The tiles set to use for this layer (defaul = None) 
 
  --- 
-<div id="__str__"></div>## __str__(self) 
+<div id="__str__"></div>
+
+## __str__(self) 
 
   
 
