@@ -1,11 +1,11 @@
 import pygame
 from pygame.locals import *
 
-from src.engine.scenenode import *
-from src.engine.texturemanager import *
-from src.engine.inputmanager import *
-from src.engine.object import *
-from src.engine.levelmanager import *
+from engine.scenenode import *
+from engine.texturemanager import *
+from engine.inputmanager import *
+from engine.object import *
+from engine.levelmanager import *
 
 
 class Game:
@@ -43,25 +43,25 @@ class Game:
 
         # Loading Textures
         # TextureManager.load_texture('steve', 'textures/steve.gif')
-        TextureManager.load_texture('player_idle_right', 'textures/character.png', (32, 32), (0,32), 13)
-        TextureManager.load_texture('player_idle_left', 'textures/character.png', (32, 32), (0,256), 13)
+        TextureManager.load_texture('player_idle_right', 'textures/character.png', (32, 32), (0, 32), 13)
+        TextureManager.load_texture('player_idle_left', 'textures/character.png', (32, 32), (0, 256), 13)
 
-        TextureManager.load_texture('player_walk_down', 'textures/character.png', (16, 24), (0,0), 4)
-        TextureManager.load_texture('player_walk_right', 'textures/character.png', (16, 24), (0,24), 4)
-        TextureManager.load_texture('player_walk_up', 'textures/character.png', (16, 24), (0,48), 4)
-        TextureManager.load_texture('player_walk_left', 'textures/character.png', (16, 24), (0,72), 4)
+        TextureManager.load_texture('player_walk_down', 'textures/character.png', (16, 24), (0, 0), 4)
+        TextureManager.load_texture('player_walk_right', 'textures/character.png', (16, 24), (0, 24), 4)
+        TextureManager.load_texture('player_walk_up', 'textures/character.png', (16, 24), (0, 48), 4)
+        TextureManager.load_texture('player_walk_left', 'textures/character.png', (16, 24), (0, 72), 4)
         
-        TextureManager.load_texture('player_attack_down', 'textures/character.png', (16, 24), (0,96), 4)
-        TextureManager.load_texture('player_attack_up', 'textures/character.png', (16, 24), (0,120), 4)
-        TextureManager.load_texture('player_attack_right', 'textures/character.png', (16, 24), (0,144), 4)
-        TextureManager.load_texture('player_attack_left', 'textures/character.png', (16, 24), (0,168), 4)
+        TextureManager.load_texture('player_attack_down', 'textures/character.png', (16, 24), (0, 96), 4)
+        TextureManager.load_texture('player_attack_up', 'textures/character.png', (16, 24), (0, 120), 4)
+        TextureManager.load_texture('player_attack_right', 'textures/character.png', (16, 24), (0, 144), 4)
+        TextureManager.load_texture('player_attack_left', 'textures/character.png', (16, 24), (0, 168), 4)
 
-        TextureManager.load_texture('robot_blue_right', 'textures/robots.png', (32, 32), (0,0), 1)
-        TextureManager.load_texture('robot_blue_left', 'textures/robots.png', (32, 32), (0,32), 1)
-        TextureManager.load_texture('robot_green_right', 'textures/robots.png', (32, 32), (32,0), 1)
-        TextureManager.load_texture('robot_green_left', 'textures/robots.png', (32, 32), (32,32), 1)
-        TextureManager.load_texture('robot_red_right', 'textures/robots.png', (32, 32), (61,0), 1)
-        TextureManager.load_texture('robot_red_left', 'textures/robots.png', (32, 32), (61,32), 1)
+        TextureManager.load_texture('robot_blue_right', 'textures/robots.png', (32, 32), (0, 0), 1)
+        TextureManager.load_texture('robot_blue_left', 'textures/robots.png', (32, 32), (0, 32), 1)
+        TextureManager.load_texture('robot_green_right', 'textures/robots.png', (32, 32), (32, 0), 1)
+        TextureManager.load_texture('robot_green_left', 'textures/robots.png', (32, 32), (32, 32), 1)
+        TextureManager.load_texture('robot_red_right', 'textures/robots.png', (32, 32), (61 ,0), 1)
+        TextureManager.load_texture('robot_red_left', 'textures/robots.png', (32, 32), (61, 32), 1)
         
 
         # Setup controls

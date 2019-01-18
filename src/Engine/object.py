@@ -1,4 +1,7 @@
-from src.engine.texturemanager import *
+"""
+Module contains the Object class.
+"""
+from engine.texturemanager import TextureManager, TextureInfo
 
 class Object:
     """
@@ -11,7 +14,7 @@ class Object:
         Keyword arguments:
         scenenode -- The scene node which this object is attached to. (default = None)
         """
-        self.textureID = 'steve'
+        self.texture_id = 'steve'
         self.size = (32, 32)
         self.node = scenenode
 
@@ -22,7 +25,7 @@ class Object:
         Keyword arguments:
         id -- The TextureID stored in TextureManager
         """
-        self.textureID = id
+        self.texture_id = id
 
     def setSize(self, size):
         """
@@ -35,7 +38,8 @@ class Object:
 
     def setSceneNode(self, node):
         """
-        Sets the scenenode which this object is attached to, should never really be called except for by the scene node which it is attached to.
+        Sets the scenenode which this object is attached to, should never really be called except
+        for by the scene node which it is attached to.
 
         Keyword arguments:
         node -- The node which this object is now attached to.
@@ -44,21 +48,23 @@ class Object:
 
     def update(self, delta):
         """
-        Blank function, Override this when creating a new object. Should contain most game logic for an object, called once per frame.
+        Blank function, Override this when creating a new object. Should contain most game logic
+        for an object, called once per frame.
 
         Keyword arguments:
         delta -- The elapsed time since the last update call.
         """
-        return
+        pass
 
     def handle_collision(self, collision_data):
         """
-        Blank function, Override this when creating a new object. Called when this object is in a collision.
+        Blank function, Override this when creating a new object. Called when this object is in a
+        collision.
 
         Keyword arguments:
         collision_data -- The CollisionInformation object describing the collision.
         """
-        return
+        pass
 
     def move(self, amount):
         """
@@ -69,14 +75,15 @@ class Object:
         """
         self.node.translate(amount)
 
-    def switch_texture(self, newTexture):
+    def switch_texture(self, new_texture):
         """
-        Changes the texture id, and resets the new textures animation. It is better practise to use this than changing textureID or setTextureID()
+        Changes the texture id, and resets the new textures animation. It is better practise to
+        use this than changing textureID or setTextureID()
 
         Keyword arguments:
-        newTexture -- The TextureID to switch to.
+        new_texture -- The TextureID to switch to.
         """
-        if self.textureID == newTexture:
+        if self.texture_id == new_texture:
             return
         TextureManager.get_texture_info(newTexture).reset_anim()
-        self.textureID = newTexture
+        self.texture_id = new_texture

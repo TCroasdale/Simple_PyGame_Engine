@@ -1,5 +1,10 @@
-from src.engine.texturemanager import *
+"""
+This module provides classes required for using scenenodes.
+"""
 from enum import Enum
+from pygame.locals import Rect
+from engine.texturemanager import TextureManager
+
 
 
 class NodeType(Enum):
@@ -11,9 +16,10 @@ class NodeType(Enum):
 
 class SceneNode:
     """
-    A Scene node which will be added to the scene graph. Can have an associated object attached to it.
+    A Scene node which will be added to the scene graph. Can have an associated object attached to \
+    it.
     """
-    def __init__(self, parent=None, object=None, type=NodeType.Dynamic):
+    def __init__(self, parent=None, obj=None, n_type=NodeType.Dynamic):
         """
         Creates a Scene Node.
 
@@ -25,12 +31,12 @@ class SceneNode:
         self.children = []
         self.parent = parent
         if self.parent != None:
-            self.parent.addChild(self)
+            self.parent.add_child(self)
 
-        self.attachedObject = None
-        self.attachObject(object)
+        self.attached_object = None
+        self.attach_object(obj)
         self.position = (50, 50)
-        self.nodeType = type
+        self.node_type = n_type
 
     def translate(self, amount):
         """
@@ -41,7 +47,7 @@ class SceneNode:
         """
         self.position = (self.position[0]+amount[0], self.position[1]+amount[1])
 
-    def addChild(self, node):
+    def add_child(self, node):
         """
         Adds a child node to the children of this node.
 
@@ -50,7 +56,7 @@ class SceneNode:
         """
         self.children.append(node)
 
-    def attachObject(self, obj):
+    def attach_object(self, obj):
         """
         Attaches an object to this node.
 
@@ -58,31 +64,31 @@ class SceneNode:
         obj -- The Object to attach to this node.
         """
         if obj != None:
-            self.attachedObject = obj
-            self.attachedObject.setSceneNode(self)
+            self.attached_object = obj
+            self.attached_object.setSceneNode(self)
 
-    def getWorldPosition(self):
+    def get_world_position(self):
         """
         Returns the position of this node, relative to the world.
 
         Returns:
         A Tuple (x, y) representing the position of this node.
         """
-        if self.parent == None:
+        if self.parent is None:
             return self.position
 
-        parentpos = self.parent.getWorldPosition()
+        parentpos = self.parent.get_world_position()
         return (parentpos[0] + self.position[0], parentpos[1] + self.position[1])
 
 
-    def getBounds(self):
+    def get_bounds(self):
         """
         returns a Rectangle containing the attached object.
 
         Returns:
         a Rect containing the world position and size of this node.
         """
-        return Rect(self.getWorldPosition(), self.attachedObject.size)
+        return Rect(self.get_world_position(), self.attached_object.size)
 
 
     def handle_collision(self, coll_data):
@@ -92,8 +98,8 @@ class SceneNode:
         Keyword arguments:
         coll_data -- The CollisionInformation Object describing the collision.
         """
-        if self.attachedObject != None:
-            self.attachedObject.handle_collision(coll_data)
+        if self.attached_object != None:
+            self.attached_object.handle_collision(coll_data)
 
     def update(self, delta):
         """
@@ -102,8 +108,8 @@ class SceneNode:
         Keyword arguments:
         delta -- The time elapsed since update() was last called.
         """
-        if self.attachedObject != None:
-            self.attachedObject.update(delta)
+        if self.attached_object != None:
+            self.attached_object.update(delta)
 
         for child in self.children:
             child.update(delta)
@@ -115,9 +121,9 @@ class SceneNode:
         Keyword arguments:
         screen -- The Pygame surface to blit the attached object to.
         """
-        if self.attachedObject != None:
-            texture = TextureManager.get_texture(self.attachedObject.textureID)
-            rect = Rect(self.getWorldPosition(), self.attachedObject.size)
+        if self.attached_object != None:
+            texture = TextureManager.get_texture(self.attached_object.textureID)
+            rect = Rect(self.get_world_position(), self.attached_object.size)
             screen.blit(texture, rect)
 
         for child in self.children:
@@ -130,20 +136,17 @@ class SceneNode:
         Returns:
         A list of SceneNodes
         """
-        if len(self.children) == 0:
-            return []
-        else:
-            all_children = []
-            for child in self.children:
-                all_children += [child]
-                all_children += child.get_all_children()
-            return all_children
+        all_children = []
+        for child in self.children:
+            all_children += [child]
+            all_children += child.get_all_children()
+        return all_children
 
     def to_string(self, numtabs=0):
         """
         A simple function to print the scenegraph beneath this node to the console.
 
-        Keyword arguments: 
+        Keyword arguments:
         numtabs -- The number of tabs to put before printing the node. (default = 0)
         """
         print(" "*numtabs, "node")

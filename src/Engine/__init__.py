@@ -4,4 +4,5 @@ Contains:
 TextureManager, InputManager, LevelManager, PhysicsManager, SceneNode, and Object
 """
 
-__all__ = ["scenenode", "texturemanager", "inputmanager", "levelmanager", "object", "physicsmanager"]
+__all__ = ["scenenode", "texturemanager", "inputmanager", "levelmanager", "object",
+           "physicsmanager"]

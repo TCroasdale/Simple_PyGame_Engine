@@ -1,8 +1,8 @@
 import pygame
 from pygame.locals import *
 
-from src.engine.texturemanager import *
-from src.engine.physicsmanager import *
+from engine.texturemanager import *
+from engine.physicsmanager import *
 import xml.etree.ElementTree as ET
 import csv
 import math

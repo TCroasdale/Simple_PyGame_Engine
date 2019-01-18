@@ -1,3 +1,7 @@
+"""
+The class holds utility functions and classes which can be used within the engine,
+and games created with it.
+"""
 
 class Event(list):
     """
@@ -13,8 +17,8 @@ class Event(list):
     """
 
     def __call__(self, *args, **kwargs):
-        for f in self:
-            f(*args, **kwargs)
+        for func in self:
+            func(*args, **kwargs)
 
     def __repr__(self):
         return "Event(%s)" % list.__repr__(self)
